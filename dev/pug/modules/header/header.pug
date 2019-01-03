@@ -1,0 +1,72 @@
+mixin header(name)
+  - name = name || ''
+  header(class="header section" + name, data-section="top", id="top")
+    .container
+      .row.row--aic
+        .col-lg-8
+          a.logo(href="#")
+            .logo__img: img(src="img/content/logo.png", alt="logo")
+            .logo__slogan Комфортный отдых в горах Алтая <br> с оздоровительными процедурами и экскурсиями
+        .col-lg-4
+          a.phone(href="tel:+79039194440") +7 903 919 4440
+          //- a.recall(href="#form1", data-fancybox="recall", data-options='{"touch" : false}'): span Заказать звонок
+          .recall.btn--recall-js: span Заказать звонок
+      .row.row--header
+        .col-lg-7
+          .header__slogan 7 летних дней <br>в горах 
+            span зарядят вас энергией 
+            b на целый год
+        .col-lg-5
+          .header__video
+            .video__item(data-youtube='PMSaq9S8gf4')
+            .header__video-desc Посмотрите красивую историю о нас и за 3 минуты влюбитесь в Алтай
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//- 

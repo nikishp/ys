@@ -1,0 +1,1752 @@
+/* lead-up style */
+//retina
+// https://github.com/strues/retinajs
+// для использования доставляем дата атрибут data-rjs="3", в бекграундах используем миксин
+// +retina('../img/general/', 3, cover, center center no-repeat)
+//@import "../libs/retina/_retina.sass"
+
+//+triangle(right, 5px, 5px, #fff)
+
+@import "smart-grid"
+@import "variabls"
+@import "mixin"
+@import "font"
+@import "sprite"
+//@include retina-sprites($retina-groups) //раскоменить для ретины
+@import "same_style"
+
+// @import "pixel-glass"
+
+/* lead-up style end */
+
+/* blocks style */
+
+/* head */
+@import "../pug/modules/header/header"
+
+/* foot */
+@import "../pug/modules/foot/foot"
+
+/* forms */
+@import "../pug/modules/forms/forms"
+
+/* menu */
+@import "../pug/modules/menu/menu"
+
+/* blocks style end*/
+
+
+//.fotorama__arr, .fotorama__fullscreen-icon, .fotorama__video-close, .fotorama__video-play
+  background-image: url('../img/general/fotorama.png')
+  background-repeat: no-repeat
+
+//smartgrid settings 
+// .container
+//   +container()
+// .row
+//   +row()
+// .col
+//   +col()
+//   +cols(12)
+
+/* page style */
+
+.about
+  padding-top: 174px
+  padding-bottom: 60px
+  +lg-block()
+    overflow: hidden
+.about--decor
+  &::before
+    transform: translateY(-10px)
+
+.ab-nav
+  .col
+    position: static
+  +sm-block()
+    display: none
+.ab-nav__box
+  display: flex
+  align-items: center
+
+.f-menu-control
+  display: none
+  flex-shrink: 0
+  cursor: pointer
+  // background: silver
+  .hamburger
+    padding-left: 0
+    padding-right: 15px
+
+
+
+
+.ab-nav__list
+  display: flex
+  color: #363331
+  +lh(20,16)
+  margin-left: -15px
+  margin-right: -15px
+  +md-block()
+    flex-wrap: wrap
+.ab-nav__item
+  width: calc(100% / 5 - 30px)
+  margin-left: 15px
+  margin-right: 15px
+  padding-right: 20px
+  +lg-block()
+    padding-right: 0
+  +md-block()
+    width: calc(100% / 3 - 30px)
+.ab-nav__link
+  display: block
+  &:hover
+    .svg
+      fill: #000
+.ab-nav__icon
+  display: block
+  .svg
+    +size(90)
+    fill: $orange
+    // transition: fill .25s ease, width .25s ease, height .25s ease
+    transition: fill .25s ease
+.ab-nav__title
+  display: block
+  margin-top: 40px
+  color: #1b1a18
+  font-size: rem(21)
+  font-weight: 800
+  +lh(26,21)
+  // transition: margin .25s ease
+  // transition: $tr
+  +md-block()
+    margin-top: 10px
+
+
+.ab-nav--fixed
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  z-index: 550
+  padding: 5px 0
+  background: rgba(255, 255, 255, 1) 
+  box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.1) 
+  +sm-block()
+    display: block
+  .ab-nav__list
+    +lg-block()
+      align-items: center
+    +md-block()
+      width: 100%
+  .ab-nav__item 
+    padding-right: 0
+    +md-block()
+      width: calc(100% / 5 - 30px)
+  .ab-nav__link
+    display: flex
+    align-items: center
+    +md-block()
+      justify-content: center
+  .ab-nav__title
+    margin-top: 0
+    font-size: rem(16)
+    font-weight: 700
+    line-height: 1.1
+    +lg-block()
+      font-size: rem(14)
+    +md-block()
+      font-size: 0
+  .ab-nav__icon
+    font-size: 0
+    flex-shrink: 0
+    margin-right: 8px
+    .svg
+      +size(30)
+  .ab-nav__text
+    display: none
+
+  .f-menu-control
+    +m1300-block()
+      display: block
+
+// .ab-nav__item--active
+  color: red
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.container--about
+  position: relative
+  z-index: 5 !important
+
+.about__title-box
+  margin-top: 133px
+  padding-left: 74px
+  +md-block()
+    padding-left: 0
+  +sm-block()
+    margin-top: 60px
+
+.about__title-box-desc
+  margin-top: 12px
+  font-size: rem(22)
+  +lh(42,22)
+  b
+    display: block
+    color: #151413
+    font-weight: 800
+    line-height: 30px
+
+.about__box 
+  position: relative
+  z-index: 3
+  max-width: 1423px
+  width: 100%
+  margin-left: auto
+  margin-right: auto
+  font-size: 0
+  // background: silver
+  margin-top: -215px
+  +md-block()
+    margin-top: 0
+.about__fly-img
+  position: absolute !important
+  top: 0 !important
+  left: 0 !important
+  right: 0 !important
+  bottom: 0 !important
+  z-index: -1
+  margin: auto
+  margin-top: 77px
+  text-align: center
+  +md-block()
+    display: none !important
+
+.about__foot-desc 
+  margin-top: 20px
+  text-align: center
+  color: #363331
+  font-size: rem(24)
+  +lh(36,24)
+  b
+    color: #151413
+    font-weight: 800
+
+
+.about__foot-arrow
+  margin-top: 42px
+  font-size: 0
+  text-align: center
+  .svg
+    display: inline-block
+    +size(30)
+    fill: #e7dccf
+    animation: mover 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite
+
+
+
+@keyframes mover
+    0% 
+      transform: translateY(0)
+    50%
+      transform: translateY(-10px)
+    100% 
+      transform: translateY(0)
+
+
+
+.why
+  min-height: 1080px
+  padding: 131px 0
+
+  // background-image: url('../img/general/why.jpg')
+  background-repeat: no-repeat
+  background-position: center 0
+  background-size: cover
+  +lg-block()
+    min-height: 0
+    padding-bottom: 200px
+  +md-block()
+    padding-bottom: 140px
+  +sm-block()
+    padding-bottom: 100px
+.info-box
+  padding-top: 71px
+  padding-left: 56px
+  padding-right: 56px
+  padding-bottom: 13px
+  background: #fff
+  .h2
+    span
+      transform: translateX(-37px)
+  
+  color: #363331
+  font-size: rem(18)
+  +lh(28,18)
+  +lg-block()
+    padding: 30px
+    .h2
+      span
+        transform: translateX(0)
+  +sm-block()
+    padding: 30px 10px
+.info-box__desc
+  padding: 50px 0
+  padding-left: 5px
+  p
+    margin: 30px 0
+  +lg-block()
+    padding: 0
+    p
+      margin: 20px 0
+
+.why__video-link
+  display: block
+  text-align: center
+  .svg
+    +size(95)
+    fill: #fff
+    transition: fill-opacity .25s linear
+    &:hover
+      .svg
+      fill-opacity: .5
+
+  +md-block()
+    margin-top: 60px
+  +sm-block()
+    padding-bottom: 41px
+
+
+.recall-box
+  display: flex
+  align-items: center
+  padding: 100px
+  padding-top: 83px
+  padding-bottom: 98px
+  box-shadow: 14px 14px 80px rgba(99, 78, 56, 0.3)
+  background-color: #ffffff
+  +lg-block()
+    padding: 40px
+  +md-block()
+    flex-wrap: wrap
+    padding: 15px
+    padding-bottom: 30px
+    text-align: center
+.recall-box__part
+  width: 50%
+  // background: silver
+  +md-block()
+    width: 100%
+
+.recall-box__title
+  display: block
+  color: #151413
+  font-family: $pl
+  font-size: rem(36)
+  font-weight: 900
+  +lh(56,36)
+  +sm-block()
+    font-size: rem(32)
+    line-height: 1.2
+.recall-box__desc
+  margin: 0
+  margin-top: 7px
+  font-size: rem(20)
+  font-weight: 400
+  +lh(28,20)
+
+.recall-box__action
+  text-align: right
+  +md-block()
+    margin-top: 30px
+    text-align: center
+
+
+.honor
+  padding-bottom: 135px
+  +lg-block()
+    padding-bottom: 40px
+  .recall-box
+    margin-top: -212px
+    +lg-block()
+      margin-top: -180px
+  .h2
+    margin-top: 190px
+    +lg-block()
+      margin-top: 70px
+  .img-row
+    +sm-block()
+      align-items: flex-start
+  .img-box
+    +sm-block()
+      display: none
+.honor--bg 
+  background: linear-gradient(to bottom,rgba(255,255,255,0) ,#fff  700px),url(../img/general/pattern2.jpg)
+
+.honor__slogan
+  margin-top: 22px
+  color: #363331
+  font-size: rem(22)
+  line-height: 30px
+  +lh(30,22)
+
+.img-row
+  display: flex
+  justify-content: center
+  +lg-block()
+    margin: 50px -10px !important
+.img-part
+  width: 50%
+  &:hover
+    z-index: 6
+  +lg-block()
+    margin: 0 !important
+    padding: 0 10px
+.img-part__r
+  .img-title
+    margin-left: 115px
+    +lg-block()
+      margin-left: 0
+.img-title
+  max-width: 320px
+  width: 100%
+  margin-left: 100px
+  font-size: rem(20)
+  line-height: 28px
+  +lh(28,20)
+  color: #151413
+  // background: silver
+  b
+    font-weight: 800
+  +lg-block()
+    max-width: 100%
+    margin: 0 !important
+  +sm-block()
+    font-size: 1rem
+.img-box
+  position: relative
+  margin: 65px 0
+  font-size: 0
+  img
+    max-width: inherit
+  &:hover
+    .img-box__symboll
+      opacity: 0
+  +lg-block()
+    margin: 40px 0 0!important
+    transform: translate(0,0) !important
+    img
+      max-width: 100%
+.img-box__symboll
+  position: absolute
+  top: 0
+  left: 110px
+  +size(50)
+  display: flex
+  justify-content: center
+  align-items: center
+  font-size: rem(34)
+  // font-weight: 500
+  border-radius: 50%
+  background: #fff
+  border: 2px solid currentColor
+  opacity: 1
+  transform: translateY(-6px)
+  transition: opacity .25s ease
+  +lg-block()
+    top: 0 !important
+    left: 30px !important
+    right: auto !important
+    bottom: auto !important
+    transform: translateY(-10px) !important
+
+
+.img-box__symboll--minus
+  color: #fdabb2
+  border-color: #f9abb1
+  box-shadow: 0 0 50px 0 rgba(249, 171, 177, 0.9)
+.img-box__symboll--plus
+  color: #a3d39c
+  border-color: #c5e7c0
+  box-shadow: 0 0 50px 0 rgba(197, 231, 192, 0.9)
+
+
+
+
+
+.img-row--r1
+  margin-top: 159px
+  .img-part__l
+    z-index: 3
+    .img-box
+      transform: translateX(49px)
+  .img-part__r
+    margin-top: 85px
+    .img-box
+      padding-top: 10px  
+      transform: translateX(-7px)
+      +lg-block()
+        padding-top: 0
+.img-row--r2
+  margin-top: -39px
+  .img-part__l
+    .img-box
+      transform: translate(4px,-9px)
+  .img-part__r
+    .img-title
+      margin-top: -10px
+    .img-box
+      margin-top: 25px
+      transform: translateX(-34px)
+    .img-box__symboll
+      top: auto
+      bottom: 0
+      transform: translateY(6px)
+    +lg-block()
+      display: flex
+      flex-direction: column-reverse
+
+.img-row--r3
+  margin-top: -7px
+  .img-part__l
+    z-index: 3
+    .img-box
+      transform: translate(49px,-12px)
+  .img-part__r
+    .img-title
+      margin-top: 65px
+    .img-box
+      transform: translate(-75px,-10px)
+
+    .img-box__symboll
+      left: 190px
+      // top: auto
+      // bottom: 0
+      // transform: translateY(6px)
+
+
+.img-row--r4
+  margin-top: -40px
+  .img-part__l
+    z-index: 3
+    .img-title
+      max-width: 370px
+      margin-top: -60px
+    .img-box
+      transform: translate(0px,-50px)
+    .img-box__symboll
+      // left: 190px
+      top: auto
+      bottom: 0
+      transform: translateY(6px)
+    +lg-block()
+      display: flex
+      flex-direction: column-reverse
+  .img-part__r
+    .img-title
+      margin-top: 65px
+    .img-box
+      transform: translate(-7px,-10px)
+
+    .img-box__symboll
+      left: 190px
+      // top: auto
+      // bottom: 0
+      // transform: translateY(6px)
+
+
+
+.img-row--r5
+  margin-top: 46px
+  .img-part__l
+    z-index: 3
+    .img-title
+      // max-width: 370px
+      margin-top: -60px
+    .img-box
+      transform: translate(47px,-9px)
+    // .img-box__symboll
+      // left: 190px
+      top: auto
+      bottom: 0
+      transform: translateY(6px)
+  .img-part__r
+    .img-title
+      margin-top: 20px
+    .img-box
+      transform: translate(-35px,-1px)
+
+    // .img-box__symboll
+      left: 190px
+      // top: auto
+      // bottom: 0
+      // transform: translateY(6px)
+
+
+
+
+.img-row--r6
+  margin-top: 29px
+  .img-part__l
+    // z-index: 3
+    .img-title
+      // max-width: 370px
+      margin-top: -60px
+    .img-box
+      transform: translate(77px,1px)
+    // .img-box__symboll
+      // left: 190px
+      top: auto
+      bottom: 0
+      transform: translateY(6px)
+  .img-part__r
+    margin-top: -114px
+    .img-title
+      max-width: 370px
+      margin-left: 65px
+      margin-top: -21px
+    .img-box
+      transform: translate(-59px,0px)
+
+    .img-box__symboll
+      left: 190px
+      top: auto
+      bottom: 0
+      // transform: translateY(6px)
+    +lg-block()
+      display: flex
+      flex-direction: column-reverse
+
+.wait
+  padding: 170px 0 180px
+  text-align: center
+  color: #fff
+
+
+.wait__text
+  font-family: $pl
+  font-weight: 900
+  font-size: rem(48)
+  +lh(56,48)
+  b
+    display: block
+    margin-top: 35px
+    font-size: rem(72)
+    margin-left: 249px
+    line-height: 1
+    +sm-block()
+      margin-left: 0
+      font-size: rem(65)
+  span
+    display: block
+    font-size: rem(60)
+    font-weight: 400
+  +sm-block()
+    font-size: rem(30)
+    span
+      font-size: rem(50)
+.wait__desc
+  margin-top: 16px
+  font-size: rem(22)
+  +lh(30,22)
+
+
+
+.wait__action
+  margin-top: 76px
+
+ 
+.guests
+  padding-top: 252px
+  padding-bottom: 122px
+  +md-block()
+    padding-bottom: 10px
+  .row
+  [class*="row--"]
+    +m1440-block()
+      margin-top: 50px
+      margin-bottom: 50px
+  .h2
+    span
+      font-weight: normal
+  .img-row
+    align-items: center
+  .img-box
+    margin: 0
+    +m1440-block()
+      transform: translate(0,0)
+    +sm-block()
+      display: none
+  .img-part
+    +sm-block()
+      width: 100%
+  .img-title
+    max-width: 370px
+    width: 100%;
+    margin-left: 0
+    font-size: 1.25rem;
+    line-height: 1.4;
+    color: #151413;
+    +m1440-block()
+      max-width: 100%
+      transform: translate(0,0)
+.guests--decor::before 
+  transform: translateY(-10px)
+
+.guests--bg
+  background: url(../img/general/pattern2.jpg)
+
+.row--gst1
+  margin-top: 132px
+  .img-title
+    // margin-top: -94px
+    transform: translateY(-75px)
+
+
+
+.row--gst2
+  flex-direction: row-reverse
+  .img-box
+    transform: translate(-57px, -110px)
+  .img-title
+    transform: translate(0, 103px)
+
+.row--gst3
+  align-items: flex-start
+  margin-top: 40px
+  +m1440-block()
+    text-align: center
+  .img-part__l
+    z-index: 4
+    .img-box
+      transform: translateX(149px)
+      +m1440-block()
+        transform: translate(0)
+  .img-part__r
+    .img-box
+      transform: translate(28px,186px)
+      +m1440-block()
+        transform: translate(0)
+  .img-title
+    margin-top: 154px
+    +m1440-block()
+      margin-top: 50px
+    +lg-block 
+      margin-top: 30px !important
+    +sm-block()
+      margin-top: 0 !important
+.row--gst4
+  margin-top: 144px
+  .img-box
+    transform: translateX(-151px)
+
+
+.row--gst5
+  margin-top: 87px
+  align-items: flex-start
+  .img-title 
+    margin-top: 149px
+    // padding-top: 100px
+    // transform: translateY(149px)
+    +m1440-block()
+      margin-top: 0
+  .img-box
+    transform: translate(78px, 32px)
+.img-title-sl
+  margin-bottom: 76px
+  font-family: $pl
+  font-size: rem(48)
+  font-weight: 900
+  +lh(56,48)
+
+
+
+
+
+
+.warning
+  padding-top: 11px
+  color: #df270f
+  font-size: rem(20)
+  line-height: 28px
+  +lh(28,20)
+  b
+    font-weight: 800
+
+.warning__img
+  margin-bottom: 43px
+  font-size: 0
+
+  .svg
+    width: 59px
+    height: 59px
+    fill: #df270f
+
+
+
+
+.warning__desc
+  max-width: 370px
+  width: 100%
+  +md-block()
+    max-width: 100%
+
+
+.baths
+  padding-top: 177px
+  padding-bottom: 90px
+  .h2
+    margin-bottom: 149px
+    span
+      display: inline
+      font-weight: normal
+    +lg-block()
+      margin-bottom: 50px
+
+.container--custom
+  max-width: 1570px !important
+.baths__box-part--l
+
+.baths__box-part--r
+
+
+.text-box
+  max-width: 500px
+  width: 100%
+  +sm-block()
+    max-width: 100%
+.text-box--baths
+  font-size: rem(20)
+  +lh(28,20)
+  b
+    font-weight: 800
+
+
+
+.baths__desc-title
+  margin: 74px 0
+  font-family: $pl
+  font-size: rem(36)
+  font-weight: 400
+  line-height: 42px
+  +lh(42,36)
+  b
+    font-weight: 900
+  +sm-block()
+    margin: 50px 0
+    font-size: rem(30)
+
+.baths__img
+  font-size: 0
+  margin-bottom: 10px
+  &:last-child
+    +sm-block()
+      display: none
+
+.baths__foot
+  max-width: 900px
+  width: 100%
+  margin-top: 96px
+  margin-left: auto
+  margin-right: auto
+  +sm-block()
+    max-width: 100%
+    margin-top: 60px
+.baths__foot-desc
+  font-family: $pl
+  font-size: rem(36)
+  font-weight: 400
+  line-height: 42px
+  +lh(42,36)
+  b
+    font-weight: 900
+  +sm-block()
+    font-size: rem(30)
+.baths__foot-img
+  margin-top: 60px
+  font-size: 0
+  text-align: center
+
+
+.what
+  padding: 112px 0
+  background-repeat: no-repeat
+  background-position: center 0
+  background-size: cover
+  .info-box__desc
+    max-width: 480px
+    +md-block()
+      max-width: 100%
+.info-box--normall
+  padding: 38px 56px 50px
+  .h2
+    span 
+      font-weight: normal
+      transform: translateX(0)
+  .info-box__desc
+    padding: 24px 0 0 5px
+
+
+.info-box__action
+  padding-top: 40px
+  +sm-block()
+    text-align: center
+
+
+
+
+
+
+.pantu
+  min-height: 1281px
+  padding-top: 142px
+  font-size: rem(18)
+  background-repeat: no-repeat 
+  background-position: center
+  // background-size: contain
+  +md-block()
+    min-height: 0
+    margin-bottom: 100px
+    background: #fff
+  li
+    display: flex
+    // align-items: center
+    padding: 10px 0
+    &::before
+      flex-shrink: 0
+      margin-top: 6px
+      margin-right: 10px
+      content: ''
+      display: block
+      +size(4)
+      border-radius: 50%
+      background: #000
+.info-box__desc
+  .mtc
+    margin-top: 79px
+    line-height: 1.3
+
+
+.bathsb
+  // padding-top: 121px
+  margin-top: -54px
+  padding-bottom: 68px
+  .recall-box
+    margin-top: -194px
+    padding-bottom: 70px
+    +md-block()
+      padding-bottom: 30px
+  .h2
+    margin-top: 175px
+    margin-bottom: 131px
+    i
+      font-style: normal
+      font-weight: 400
+    +lg-block()
+      margin-top: 80px
+      margin-bottom: 60px
+
+  .text-box
+    max-width: 550px
+    +m1440-block()
+      max-width: 100%
+
+  .baths__desc-title
+    margin: 38px 0 0
+
+.container--custommt
+  margin-top: 110px
+
+
+
+
+.row-baths
+  flex-direction: row-reverse
+
+  .baths__img
+    text-align: right
+
+  .text-box
+    max-width: 100%
+    padding-left: 183px
+    +m1440-block()
+      padding-left: 0
+
+.sc
+  margin-top: 45px
+  padding-left: 11%
+  font-size: rem(18)
+  line-height: 1.3
+
+.bathsb__action
+  margin-top: 106px
+  text-align: center
+  +lg-block()
+    margin-top: 50px
+.result
+  padding-top: 141px
+  padding-bottom: 107px
+  background-repeat: no-repeat
+  background-position: center 0
+  background-size: cover
+
+  .h2
+    span 
+      font-weight: normal
+.check-list
+  color: #363331
+  font-size: rem(18)
+  &:first-child
+    margin-top: 148px
+    +lg-block()
+      margin-top: 50px
+.check-list__item
+  display: flex
+  padding: 11px 0
+  .svg
+    flex-shrink: 0
+    +size(25)
+    margin-right: 25px
+    fill: $orange
+
+
+
+.result__title
+  margin-top: 36px
+  margin-bottom: 38px
+  padding-left: 14%
+  color: #151413
+  font-size: rem(18)
+  font-weight: 800
+
+.result__collage
+  display: flex
+  flex-wrap: wrap
+  align-items: flex-start
+  justify-content: center
+  margin-top: 46px
+  margin-left: -15px
+  margin-right: -15px
+  +lg-block()
+    margin-left: -10px
+    margin-right: -10px
+  img
+    margin: 15px
+    z-index: 3
+    box-shadow: 21px 21px 60px 0px rgba(0, 0, 0, 0.35)
+    +lg-block()
+      max-width: calc(50% - 20px)
+      margin: 10px
+    &:first-child
+      // transform: translateY(66px)
+      margin-top: 82px
+      +lg-block()
+        margin-top: 0
+    &:last-child
+      // transform: translateY(-165px)
+      margin-top: -165px
+    &:hover
+      z-index: 4
+
+  +lg-block()
+    margin-top: 50px
+
+
+.guests 
+  .img-box img
+    box-shadow: 21px 21px 60px 0px rgba(0, 0, 0, 0.1)
+    +m1440-block()
+      max-width: 100%
+.result-foot
+  margin-top: 163px
+  font-size: rem(18)
+  .h3 + p
+    margin-top: 48px
+
+.result__action
+  text-align: right
+  .btn
+    display: inline-table
+    vertical-align: middle
+    line-height: 80px
+    padding-left: 40px
+    padding-right: 40px
+  +md-block()
+    margin-top: 20px
+    text-align: center
+  +sm-block()
+    text-align: center
+    .btn
+      display: inline-flex
+      line-height: 1
+      justify-content: center
+      align-items: center
+
+.price
+  padding-top: 112px
+  padding-bottom: 140px
+  background-repeat: no-repeat
+  background-position: center 0
+  background-size: cover
+  color: #fff
+  .h2
+    color: #fff
+.price__term
+  margin-top: 33px
+  font-size: rem(24)
+  font-weight: 800
+
+.price-option
+  [class*="col-lg"]
+    margin-top: 72px
+.price__box
+  padding-top: 22px
+  padding-left: 43px
+  color: #000
+  padding-right: 40px
+  padding-bottom: 24px
+  border-radius: 8px
+  font-size: rem(24)
+  font-weight: 600
+  background-color: #ffffff
+
+
+.price__box-cost
+  display: block
+  margin-top: 20px
+  font-weight: 800
+
+.price__explanation
+  margin-top: 50px
+  font-size: rem(18)
+  text-align: right
+  line-height: 1.3
+
+.price__foot
+  margin-top: 56px
+.price__options-title
+  margin-bottom: 34px
+  font-size: rem(18)
+  font-weight: 800
+
+.price__option
+  display: flex
+  padding: 18px 0
+  font-size: rem(18)
+  .svg
+    +size(40)
+    margin-right: 40px
+    flex-shrink: 0
+    fill: $orange
+
+
+.price__actions
+  .btn
+    width: 100%
+    max-width: 100%
+    min-width: 0
+    margin-top: 30px
+    padding-left: 5px
+    padding-right: 5px
+
+
+.welcome
+  padding-top: 192px
+  padding-bottom: 255px
+  font-size: rem(18)
+  +lh(28,18)
+
+  .h2
+    span
+      font-weight: normal
+  +sm-block()
+    padding-bottom: 140px
+.welcome__desc
+  margin-top: 84px
+  p
+    margin: 28px 0
+  br
+    +m1440-block()
+      display: none
+  +sm-block()
+    margin-top: 50px
+.welcome__foot
+  display: flex
+  align-items: center
+  align-items: flex-start
+  margin-top: 55px
+  font-size: rem(14)
+  +lh(20,14)
+  +sm-block()
+    flex-direction: column-reverse
+.welcome__foot-item
+  width: 50%
+  +sm-block()
+    width: 100%
+.welcome__name
+  display: block
+  margin-top: 15px
+  margin-bottom: 10px
+  font-size: rem(18)
+.welcome__foot-item--logo
+  img
+    width: 109px
+
+.welcome__img
+  margin-top: 104px
+  margin-left: -148px
+  font-size: 0
+  // background: silver
+  img
+    // opacity: .7
+    max-width: inherit
+  +m1440-block()
+    margin-left: 0
+    img
+      max-width: 100%
+  +sm-block()
+    display: none
+
+.zic
+  z-index: 3
+
+
+.gallery
+  padding-bottom: 195px
+  background: url(../img/general/pattern2.jpg)
+
+.gallery--recall
+  position: relative
+  z-index: 10
+  margin-top: -150px
+
+
+.sl-wrap
+  position: relative
+  font-size: 0
+  .container
+    position: absolute
+    top: 50%
+    left: 0
+    right: 0
+    margin: auto
+    transform: translateY(-50%)
+    background: silver
+    pointer-events: none
+    height: 0
+.sl__item
+  padding-left: 15px
+  padding-right: 15px
+.sl__item-link
+  display: block
+  // background: silver
+  img
+    margin-left: auto
+    margin-right: auto
+    opacity: .3 !important
+    transition: opacity .25s ease
+
+
+.slick-current
+  .sl__item-link
+    img
+      opacity: 1 !important
+
+
+.sl-btn
+  position: absolute
+  top: 50%
+  // left: 0
+  z-index: 10
+  width: 113px
+  height: 113px
+  padding: 31px
+  cursor: pointer
+  border-radius: 50%
+  background: $orange
+  transform: translateY(-50%)
+  pointer-events: auto
+  svg
+    fill: #fff
+    width: 100%
+    height: 100%
+  +lg-block()
+    width: 70px
+    height: 70px
+    padding: 20px
+  +sm-block()
+    +size(40)
+    padding: 10px
+.sl-btn--prev
+  left: 0 
+.sl-btn--next
+  right: 0
+
+
+.sl-wrap--gallery
+  margin-top: 228px
+  +lg-block()
+    margin-top: 80px
+
+.tours
+  padding-top: 206px
+  padding-bottom: 30px
+  .h2
+    span
+      display: block
+      margin-top: 38px
+      font-size: rem(18)
+      font-family: $defFont
+      font-weight: 800
+
+
+
+.tours__desc
+  margin-top: 73px
+  font-size: rem(18)
+  +lh(28,18)
+  b
+    font-weight: 800
+
+
+.sl-wrap--tours
+  margin-top: 90px
+
+
+.advant
+  padding-top: 206px
+  padding-bottom: 110px
+  font-size: rem(18)
+  +lh(28,18)
+  .h2
+    margin-bottom: 55px
+    font-size: rem(48)
+    line-height: 1.2
+    font-size: rem(40)
+  p
+    margin: 28px 0
+  img
+    max-width: inherit
+    +m1440-block()
+      max-width: 100%
+  .row
+    &:not(:first-child)
+      margin-top: 83px
+      +md-block()
+        margin-top: 50px
+    +lg-block()
+      align-items: flex-start
+.advant__img
+  +md-block()
+    display: none
+
+
+.going
+  padding-top: 136px
+  padding-bottom: 286px
+  font-size: rem(18)
+  +lh(28,18)
+  // background: silver
+  .h2
+    margin-bottom: 122px
+    +md-block()
+      margin-bottom: 50px
+  .row--aic
+    margin-bottom: 53px
+  p
+    margin: 28px 0
+
+
+.menu
+  padding-bottom: 50px
+  font-size: rem(18)
+  .h3
+    span
+      display: block
+      font-weight: normal
+.menu--recall
+  margin-top: -184px
+
+
+
+
+.menu__img
+  margin-bottom: 30px
+  font-size: 0
+  +md-block()
+    display: none
+.row--menu1
+  margin-top: 190px
+  +lg-block()
+    margin-top: 80px
+.row--menu2
+  margin-top: 145px
+  +lg-block()
+    margin-top: 80px
+
+.menu__list
+  margin-top: 35px
+.menu__list-item
+  display: flex
+  align-items: flex-start
+  padding: 7px 0
+  &::before
+    content: ''
+    flex-shrink: 0
+    width: 8px
+    height: 10px
+    margin-top: 8px
+    margin-right: 15px
+    background-image: url('../img/general/lst.png')
+    background-repeat: no-repeat
+
+.tv
+  padding: 110px 0 325px
+  font-size: rem(18)
+  +lh(36,18)
+  background: url(../img/general/pattern2.jpg)
+  .video__item
+    margin-top: 40px
+  +sm-block()
+    padding-bottom: 150px
+.row--tvmt1
+  margin-top: 59px
+
+.row--tvmt2
+  margin-top: 70px
+  +md-block()
+    margin-top: 0
+
+.where
+  position: relative
+  z-index: 10
+  padding-bottom: 64px
+  .btn
+    padding-left: 40px
+    padding-right: 40px
+
+  .recall-box__part
+    &:first-child
+      width: 40%
+      // background: #000
+      +md-block()
+        width: 100%
+    &:last-child
+      width: 60%
+      +md-block()
+        width: 100%
+      // background: red
+.row--where-second
+  b
+    font-size: rem(18)
+    line-height: 1.3
+.where--recall
+  margin-top: -150px
+
+.where__foot-action
+
+.row--where-first
+  margin-top: 148px
+  +lg-block()
+    margin-top: 80px
+.row--where-second
+  margin-top: 60px
+  p
+    margin: 28px 0
+
+.where__foot
+  max-width: 350px
+  width: 100%
+  margin-top: 60px
+  padding-top: 20px
+  border-top: 1px solid silver
+
+
+.where__foot-action
+  margin-top: 30px
+  .btn
+    max-width: 280px
+    width: 100%
+    min-width: 0
+    padding-left: 10px
+    padding-right: 10px
+
+
+.map
+  padding-top: 368px
+  padding-bottom: 89px
+  background-repeat: no-repeat
+  background-position: center 0
+  background-size: cover
+.map__box
+  height: 500px
+  iframe
+    display: block
+    width: 100%
+    height: 100%
+    border: none
+  +lg-block()
+    height: 350px
+
+
+
+.questions
+  // margin-top: -61px
+  padding-top: 189px
+  padding-bottom: 100px
+  font-size: rem(18)
+  +lh(32,18)
+  color: #363331
+  .h2
+    margin-bottom: 79px
+    +lg-block()
+      margin-bottom: 40px
+.questions__box
+  margin-top: 50px
+
+.questions__title
+  display: flex
+  margin-bottom: 24px
+  font-weight: 800
+  color: #151413
+  .svg
+    +size(30)
+    flex-shrink: 0
+    margin-right: 20px
+
+
+
+.foot
+  padding-bottom: 110px
+  background: url(../img/general/pattern2.jpg)
+
+.foot-slogan
+  min-height: 772px
+  padding-top: 165px
+  background-repeat: no-repeat
+  background-position: center 0
+  .h2
+    span
+      display: inline
+      font-weight: normal
+  +lg-block()
+    background-position: left 0
+.foot-slogan__desc
+  margin-top: 56px
+  font-size: rem(36)
+  font-weight: 700
+ 
+.recall--foot
+  flex-direction: column
+  margin-top: -138px
+  padding-top: 55px
+  padding-bottom: 50px
+  .recall-box__part
+    width: 100%
+    text-align: center
+  .recall-box__action
+    margin-top: 30px 
+    text-align: center
+  .btn
+    +sm-block()
+      height: auto
+      padding-top: 5px
+      padding-bottom: 5px
+.foot-soc
+  margin-top: 114px
+  +md-block()
+    margin-top: 60px
+.foot__soc-desc
+  font-size: rem(22)
+  font-weight: 700
+  +lh(28,22)
+
+
+.soc-box
+  width: 100%
+  table-layout: fixed
+  text-align: center
+  font-size: 0
+  border: 1px solid silver
+  .svg
+    +size(25)
+    transition: fill .25s ease
+  td
+    padding: 8px 5px
+    border: 2px solid silver
+  +md-block()
+    margin-top: 40px
+
+.soc-box__link
+  display: block
+  width: 100%
+  height: 100%
+  &:hover
+    .svg
+      fill: $orange
+
+.foot-bot
+  align-items: flex-end
+  margin-top: 110px
+  +md-block()
+    margin-top: 60px
+.foot__bot-desc
+  font-size: rem(18)
+  +lh(28,18)
+
+
+.foot__police
+  text-align: right
+  color: $orange
+  text-decoration: underline
+  +sm-block()
+    margin-top: 20px
+    text-align: center
+
+.t-page
+  position: relative
+  display: flex
+  justify-content: center
+  flex-direction: column
+  align-items: center
+  min-height: 100vh
+  padding: 60px
+  text-align: center
+  // background: silver
+  background-image: url('../img/general/t_page.png')
+  background-position: right 0
+  background-repeat: repeat-y
+  +sm-block()
+    padding-left: 15px
+    padding-right: 15px
+    padding-top: 80px
+    background-image: url('../img/general/pattern.png')
+    background-position: 0 0
+    background-repeat: repeat-x
+
+.t-page__title
+  color: #151413
+  font-size: 24px
+  font-weight: 800
+.t-page__subtitle
+  margin-top: 35px
+  font-size: 16px
+  font-weight: 500
+  line-height: 24px
+  +sm-block()
+    margin-top: 20px
+
+
+.t-page__warning
+  margin-top: 70px
+  color: #363331
+  font-size: 14px
+  line-height: 20px
+  +sm-block()
+    margin-top: 40px
+.t-page__back
+  position: absolute
+  top: 50px
+  left: 50px
+  align-self: flex-start
+  margin-bottom: 100px
+  color: #f07c00
+  font-size: 14px
+  font-weight: 400
+  line-height: 20px
+  span
+    text-decoration: underline
+  +sm-block()
+    margin-bottom: 50px
+.t-page__mailers
+  // margin-top: 70px
+  max-width: 200px
+  width: 100%
+  margin-left: auto
+  margin-right: auto
+
+  img
+    margin-top: 40px
+    
+
+
+
+
+
+.thank-page
+  .fancybox-container
+    display: none !important
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// 
+/* page style end */
+
+/*media style*/
+@import "media"

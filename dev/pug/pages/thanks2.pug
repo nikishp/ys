@@ -1,0 +1,84 @@
+extends ../layout/thpage_layout
+
+block head
+  - var title = 'Спасибо за заявку'
+  // meta(http-equiv='refresh', content= '3; URL=index.html')
+block content
+  .t-page__back
+    a(href="./index.html")
+      | ←
+      span  Вернуться на сайт
+  //- .t-page__title Спасибо за заявку, <br> мы свяжемся с вами
+  .t-page__title Мы отправили презентацию <br> на указаную почту
+  .t-page__subtitle Вы можете войти в нее отсюда
+  .t-page__mailers
+    //- a(href="#")
+      img(src="img/general/gmail.png", alt="image")
+  .t-page__warning Если письма нет во входящих, проверьте папку «Промоакции» или «Спам»:<br> письмо могло попасть туда по ошибке.
+
+block script
+  script.
+   var asdf = $('.t-page__mailers').html();
+    console.log('adsf', asdf)
+
+    switch (localStorage.getItem('emailVal')) {
+      case '@gmail.com':
+        $('.t-page__mailers').html('<a href="https://gmail.com"><img src="img/general/gmail.png" alt="image" /></a>');
+        break;
+      case '@mail.ru':
+         $('.t-page__mailers').html('<a href="https://mail.ru"><img src="img/general/mail_ru.png" alt="image" /></a>');
+        break;
+      case '@yandex.ru':
+         $('.t-page__mailers').html('<a href="https://passport.yandex.ru"><img src="img/general/yandex.jpg" alt="image" /></a>');
+        break;
+      default:
+       $('.t-page__mailers').html('Вы используете не популярный почтовый клиент');
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//- 
+

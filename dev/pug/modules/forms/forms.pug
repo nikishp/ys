@@ -1,0 +1,523 @@
+mixin form_default(formClass,formId)
+  - formClass = formClass || ''
+  - formId = formId || ''
+  form(class='form ' + formClass, id=''+formId, action='#', enctype='multipart/form-data')
+    // Hidden Required Fields
+    input(name='form_subject', value='' + formTitle, type='hidden')
+    // END Hidden Required Fields
+    .form__title 
+    .form__subtitle 
+    ul.form__list
+      li.form__item
+        input(type='text', required='', name='name', placeholder='name')
+      li.form__item
+        input(type='email', required='', name='mail', placeholder='mail')
+      li.form__item
+        input(type='tel', required='', name='phone', placeholder='phone')
+      li.form__item
+        input(type="file", name="userfile[]", multiple)
+      li.form__item.form__item--btn
+        button(type='submit').btn Send
+          span.form-load
+            svg.lds-spinner(xmlns='http://www.w3.org/2000/svg', viewbox='0 0 100 100', preserveaspectratio='xMidYMid', style='background:0% 0%')
+              g
+                rect(x='47', y='4.5', rx='30.08', ry='2.88', width='6', height='23')
+                animate(attributename='opacity', values='1;0', dur='1s', begin='-0.9s', repeatcount='indefinite')
+              g(transform='rotate(36 50 50)')
+                rect(x='47', y='4.5', rx='30.08', ry='2.88', width='6', height='23')
+                animate(attributename='opacity', values='1;0', dur='1s', begin='-0.8s', repeatcount='indefinite')
+              g(transform='rotate(72 50 50)')
+                rect(x='47', y='4.5', rx='30.08', ry='2.88', width='6', height='23')
+                animate(attributename='opacity', values='1;0', dur='1s', begin='-0.7s', repeatcount='indefinite')
+              g(transform='rotate(108 50 50)')
+                rect(x='47', y='4.5', rx='30.08', ry='2.88', width='6', height='23')
+                animate(attributename='opacity', values='1;0', dur='1s', begin='-0.6s', repeatcount='indefinite')
+              g(transform='rotate(144 50 50)')
+                rect(x='47', y='4.5', rx='30.08', ry='2.88', width='6', height='23')
+                animate(attributename='opacity', values='1;0', dur='1s', begin='-0.5s', repeatcount='indefinite')
+              g(transform='rotate(180 50 50)')
+                rect(x='47', y='4.5', rx='30.08', ry='2.88', width='6', height='23')
+                animate(attributename='opacity', values='1;0', dur='1s', begin='-0.4s', repeatcount='indefinite')
+              g(transform='rotate(216 50 50)')
+                rect(x='47', y='4.5', rx='30.08', ry='2.88', width='6', height='23')
+                animate(attributename='opacity', values='1;0', dur='1s', begin='-0.3s', repeatcount='indefinite')
+              g(transform='rotate(252 50 50)')
+                rect(x='47', y='4.5', rx='30.08', ry='2.88', width='6', height='23')
+                animate(attributename='opacity', values='1;0', dur='1s', begin='-0.2s', repeatcount='indefinite')
+              g(transform='rotate(288 50 50)')
+                rect(x='47', y='4.5', rx='30.08', ry='2.88', width='6', height='23')
+                animate(attributename='opacity', values='1;0', dur='1s', begin='-0.1s', repeatcount='indefinite')
+              g(transform='rotate(324 50 50)')
+                rect(x='47', y='4.5', rx='30.08', ry='2.88', width='6', height='23')
+                animate(attributename='opacity', values='1;0', dur='1s', begin='0s', repeatcount='indefinite')
+
+    .form__police
+
+mixin form1(formClass,formId)
+  - formClass = formClass || ''
+  - formId = formId || ''
+  form(class='form ' + formClass, id=''+formId, action='#', enctype='multipart/form-data')
+    .popup-close 
+      +svg('cross')
+    // Hidden Required Fields
+    input(name='form_subject', value='' + formTitle, type='hidden')
+    // END Hidden Required Fields
+    .form__content
+      .form__title Укажите контактные данные <br>и удобное время для звонка
+      .form__subtitle  Мы позвоним вам прямо сейчас<br> или в другое рабочее время: <br> по будням с 09:00 до 18:00 по Москве
+      .form__list
+        label.form__item-box Как к вам обращаться
+          span.form__item
+            input(type='text', required='', name='Имя', placeholder='Имя')
+        label.form__item-box Укажите телефон
+          span.form__item
+            input(type='tel', required='', name='Телефон', placeholder='Телефон')
+    
+        .form__item-box.form__item-box--datetime Укажите дату и время,<br> когда мы можем вам позвонить
+          .call-control
+            label.call-control__item.call-control__item--active Позвонить сейчас
+              input(type="radio", name="call_control", value="Позвонить сейчас", checked)
+            label.call-control__item Позвонить позже
+              input(type="radio", name="call_control", value="Позвонить позже")
+
+          span.form__item.form__item--datetime
+            input(type='text', name='Дата звонка', placeholder='Например, 22 февраля', disabled)
+    
+
+    .form__foot
+      .form__action
+        button(type='submit').btn.btn--nr.btn--orange Заказать звонок
+          span.form-load
+            svg.lds-spinner(xmlns='http://www.w3.org/2000/svg', viewbox='0 0 100 100', preserveaspectratio='xMidYMid', style='background:0% 0%')
+              g
+                rect(x='47', y='4.5', rx='30.08', ry='2.88', width='6', height='23')
+                animate(attributename='opacity', values='1;0', dur='1s', begin='-0.9s', repeatcount='indefinite')
+              g(transform='rotate(36 50 50)')
+                rect(x='47', y='4.5', rx='30.08', ry='2.88', width='6', height='23')
+                animate(attributename='opacity', values='1;0', dur='1s', begin='-0.8s', repeatcount='indefinite')
+              g(transform='rotate(72 50 50)')
+                rect(x='47', y='4.5', rx='30.08', ry='2.88', width='6', height='23')
+                animate(attributename='opacity', values='1;0', dur='1s', begin='-0.7s', repeatcount='indefinite')
+              g(transform='rotate(108 50 50)')
+                rect(x='47', y='4.5', rx='30.08', ry='2.88', width='6', height='23')
+                animate(attributename='opacity', values='1;0', dur='1s', begin='-0.6s', repeatcount='indefinite')
+              g(transform='rotate(144 50 50)')
+                rect(x='47', y='4.5', rx='30.08', ry='2.88', width='6', height='23')
+                animate(attributename='opacity', values='1;0', dur='1s', begin='-0.5s', repeatcount='indefinite')
+              g(transform='rotate(180 50 50)')
+                rect(x='47', y='4.5', rx='30.08', ry='2.88', width='6', height='23')
+                animate(attributename='opacity', values='1;0', dur='1s', begin='-0.4s', repeatcount='indefinite')
+              g(transform='rotate(216 50 50)')
+                rect(x='47', y='4.5', rx='30.08', ry='2.88', width='6', height='23')
+                animate(attributename='opacity', values='1;0', dur='1s', begin='-0.3s', repeatcount='indefinite')
+              g(transform='rotate(252 50 50)')
+                rect(x='47', y='4.5', rx='30.08', ry='2.88', width='6', height='23')
+                animate(attributename='opacity', values='1;0', dur='1s', begin='-0.2s', repeatcount='indefinite')
+              g(transform='rotate(288 50 50)')
+                rect(x='47', y='4.5', rx='30.08', ry='2.88', width='6', height='23')
+                animate(attributename='opacity', values='1;0', dur='1s', begin='-0.1s', repeatcount='indefinite')
+              g(transform='rotate(324 50 50)')
+                rect(x='47', y='4.5', rx='30.08', ry='2.88', width='6', height='23')
+                animate(attributename='opacity', values='1;0', dur='1s', begin='0s', repeatcount='indefinite')
+      .form__police Нажимая на кнопку, вы даете согласие на обработку <br> своих персональных данных и соглашаетесь <br> с 
+        a(href="#polic_form", data-fancybox='adf')  Политикой конфиденциальности
+
+mixin form2(formClass,formId)
+  - formClass = formClass || ''
+  - formId = formId || ''
+  form(class='form ' + formClass, id=''+formId, action='#', enctype='multipart/form-data')
+    .popup-close 
+      +svg('cross')
+    // Hidden Required Fields
+    input(name='form_subject', value='' + formTitle, type='hidden')
+    // END Hidden Required Fields
+    .form__content
+      .form__title Укажите контактные данные <br>и удобное время для звонка
+      .form__subtitle  Мы позвоним вам в любое<br>  рабочее время: <br> по будням с 09:00 до 18:00 по Москве
+      .form__list
+        label.form__item-box Как к вам обращаться
+          span.form__item
+            input(type='text', required='', name='Имя', placeholder='Имя')
+        label.form__item-box Укажите телефон
+          span.form__item
+            input(type='tel', required='', name='Телефон', placeholder='Телефон')
+    
+        .form__item-box.form__item-box--datetime Укажите дату и время,<br> когда мы можем вам позвонить
+          //- .call-control
+            label.call-control__item.call-control__item--active Позвонить сейчас
+              input(type="radio", name="call_control", value="Позвонить сейчас", checked)
+            label.call-control__item Позвонить позже
+              input(type="radio", name="call_control", value="Позвонить позже")
+
+          span.form__item.form__item--datetime
+            input(type='text', name='Дата звонка', placeholder='Например, 22 февраля')
+    
+
+    .form__foot
+      .form__action
+        button(type='submit').btn.btn--nr.btn--orange Заказать звонок
+          span.form-load
+            svg.lds-spinner(xmlns='http://www.w3.org/2000/svg', viewbox='0 0 100 100', preserveaspectratio='xMidYMid', style='background:0% 0%')
+              g
+                rect(x='47', y='4.5', rx='30.08', ry='2.88', width='6', height='23')
+                animate(attributename='opacity', values='1;0', dur='1s', begin='-0.9s', repeatcount='indefinite')
+              g(transform='rotate(36 50 50)')
+                rect(x='47', y='4.5', rx='30.08', ry='2.88', width='6', height='23')
+                animate(attributename='opacity', values='1;0', dur='1s', begin='-0.8s', repeatcount='indefinite')
+              g(transform='rotate(72 50 50)')
+                rect(x='47', y='4.5', rx='30.08', ry='2.88', width='6', height='23')
+                animate(attributename='opacity', values='1;0', dur='1s', begin='-0.7s', repeatcount='indefinite')
+              g(transform='rotate(108 50 50)')
+                rect(x='47', y='4.5', rx='30.08', ry='2.88', width='6', height='23')
+                animate(attributename='opacity', values='1;0', dur='1s', begin='-0.6s', repeatcount='indefinite')
+              g(transform='rotate(144 50 50)')
+                rect(x='47', y='4.5', rx='30.08', ry='2.88', width='6', height='23')
+                animate(attributename='opacity', values='1;0', dur='1s', begin='-0.5s', repeatcount='indefinite')
+              g(transform='rotate(180 50 50)')
+                rect(x='47', y='4.5', rx='30.08', ry='2.88', width='6', height='23')
+                animate(attributename='opacity', values='1;0', dur='1s', begin='-0.4s', repeatcount='indefinite')
+              g(transform='rotate(216 50 50)')
+                rect(x='47', y='4.5', rx='30.08', ry='2.88', width='6', height='23')
+                animate(attributename='opacity', values='1;0', dur='1s', begin='-0.3s', repeatcount='indefinite')
+              g(transform='rotate(252 50 50)')
+                rect(x='47', y='4.5', rx='30.08', ry='2.88', width='6', height='23')
+                animate(attributename='opacity', values='1;0', dur='1s', begin='-0.2s', repeatcount='indefinite')
+              g(transform='rotate(288 50 50)')
+                rect(x='47', y='4.5', rx='30.08', ry='2.88', width='6', height='23')
+                animate(attributename='opacity', values='1;0', dur='1s', begin='-0.1s', repeatcount='indefinite')
+              g(transform='rotate(324 50 50)')
+                rect(x='47', y='4.5', rx='30.08', ry='2.88', width='6', height='23')
+                animate(attributename='opacity', values='1;0', dur='1s', begin='0s', repeatcount='indefinite')
+      .form__police Нажимая на кнопку, вы даете согласие на обработку <br> своих персональных данных и соглашаетесь <br> с 
+        a(href="#polic_form", data-fancybox='adf')  Политикой конфиденциальности
+
+mixin form3(formClass,formId)
+  - formClass = formClass || ''
+  - formId = formId || ''
+  form(class='form ' + formClass, id=''+formId, action='#', enctype='multipart/form-data')
+    .popup-close 
+      +svg('cross')
+    // Hidden Required Fields
+    input(name='form_subject', value='' + formTitle, type='hidden')
+    // END Hidden Required Fields
+    .form__content
+      .form__title Что вы хотите узнать <br> об отдыхе на Алтае?
+      //- .form__subtitle Задайте свой вопрос Мы быстро ответим
+      .form__list
+        label.form__item-box Задайте свой вопрос Мы быстро ответим
+          span.form__item.form__item--textarea
+            textarea(name="Ваш вопрос", placeholder="Ваш вопрос", required)
+        label.form__item-box Как к вам обращаться
+          span.form__item
+            input(type='text', required='', name='Имя', placeholder='Имя')
+        label.form__item-box Возможно, мы сейчас в горах. У нас небольшой <br> коллектив. На какую почту прислать ответ?
+          span.form__item
+            input(type='email', required='', name='E-mail ', placeholder='E-mail ')
+    
+        //- .form__item-box.form__item-box--datetime Укажите дату и время,<br> когда мы можем вам позвонить
+          //- .call-control
+            label.call-control__item.call-control__item--active Позвонить сейчас
+              input(type="radio", name="call_control", value="Позвонить сейчас", checked)
+            label.call-control__item Позвонить позже
+              input(type="radio", name="call_control", value="Позвонить позже")
+
+          span.form__item.form__item--datetime
+            input(type='text', name='Дата звонка', placeholder='Например, 22 февраля')
+    
+
+    .form__foot.form__foot--custom-btn
+      .form__action
+        button(type='submit').custom-btn
+          img(src="img/general/btn.jpg", alt="image")
+      .form__police Нажимая на кнопку, вы даете согласие на обработку <br> своих персональных данных и соглашаетесь <br> с 
+        a(href="#polic_form", data-fancybox='adf')  Политикой конфиденциальности
+
+mixin form4(formClass,formId)
+  - formClass = formClass || ''
+  - formId = formId || ''
+  form(class='form ' + formClass, id=''+formId, action='#', enctype='multipart/form-data')
+    .popup-close 
+      +svg('cross')
+    // Hidden Required Fields
+    input(name='form_subject', value='' + formTitle, type='hidden')
+    input(name='formfile_present', value='presentation', type='hidden')
+    // END Hidden Required Fields
+    .form__content
+      .form__title.form__title--sm Спасибо, что Вы обратились <br> и заказали звонок. А пока вы ждете, <br> предлагаем получить презентацию <br> о Солонешье. Вы сможете в удобное <br> время посмотреть все еще раз.
+      .form__list
+        label.form__item-box На какой E-mail прислать презентацию
+          span.form__item
+            input(type='email', required='', name='E-mail', placeholder='E-mail').email-parse
+        //- label.form__item-box Укажите телефон
+          span.form__item
+            input(type='tel', required='', name='Телефон', placeholder='Телефон')
+    
+        //- .form__item-box.form__item-box--datetime Укажите дату и время,<br> когда мы можем вам позвонить
+          //- .call-control
+            label.call-control__item.call-control__item--active Позвонить сейчас
+              input(type="radio", name="call_control", value="Позвонить сейчас", checked)
+            label.call-control__item Позвонить позже
+              input(type="radio", name="call_control", value="Позвонить позже")
+
+          span.form__item.form__item--datetime
+            input(type='text', name='Дата звонка', placeholder='Например, 22 февраля')
+    
+
+    .form__foot
+      .form__action
+        button(type='submit').btn.btn--nr.btn--orange Заказать презентацию
+          span.form-load
+            svg.lds-spinner(xmlns='http://www.w3.org/2000/svg', viewbox='0 0 100 100', preserveaspectratio='xMidYMid', style='background:0% 0%')
+              g
+                rect(x='47', y='4.5', rx='30.08', ry='2.88', width='6', height='23')
+                animate(attributename='opacity', values='1;0', dur='1s', begin='-0.9s', repeatcount='indefinite')
+              g(transform='rotate(36 50 50)')
+                rect(x='47', y='4.5', rx='30.08', ry='2.88', width='6', height='23')
+                animate(attributename='opacity', values='1;0', dur='1s', begin='-0.8s', repeatcount='indefinite')
+              g(transform='rotate(72 50 50)')
+                rect(x='47', y='4.5', rx='30.08', ry='2.88', width='6', height='23')
+                animate(attributename='opacity', values='1;0', dur='1s', begin='-0.7s', repeatcount='indefinite')
+              g(transform='rotate(108 50 50)')
+                rect(x='47', y='4.5', rx='30.08', ry='2.88', width='6', height='23')
+                animate(attributename='opacity', values='1;0', dur='1s', begin='-0.6s', repeatcount='indefinite')
+              g(transform='rotate(144 50 50)')
+                rect(x='47', y='4.5', rx='30.08', ry='2.88', width='6', height='23')
+                animate(attributename='opacity', values='1;0', dur='1s', begin='-0.5s', repeatcount='indefinite')
+              g(transform='rotate(180 50 50)')
+                rect(x='47', y='4.5', rx='30.08', ry='2.88', width='6', height='23')
+                animate(attributename='opacity', values='1;0', dur='1s', begin='-0.4s', repeatcount='indefinite')
+              g(transform='rotate(216 50 50)')
+                rect(x='47', y='4.5', rx='30.08', ry='2.88', width='6', height='23')
+                animate(attributename='opacity', values='1;0', dur='1s', begin='-0.3s', repeatcount='indefinite')
+              g(transform='rotate(252 50 50)')
+                rect(x='47', y='4.5', rx='30.08', ry='2.88', width='6', height='23')
+                animate(attributename='opacity', values='1;0', dur='1s', begin='-0.2s', repeatcount='indefinite')
+              g(transform='rotate(288 50 50)')
+                rect(x='47', y='4.5', rx='30.08', ry='2.88', width='6', height='23')
+                animate(attributename='opacity', values='1;0', dur='1s', begin='-0.1s', repeatcount='indefinite')
+              g(transform='rotate(324 50 50)')
+                rect(x='47', y='4.5', rx='30.08', ry='2.88', width='6', height='23')
+                animate(attributename='opacity', values='1;0', dur='1s', begin='0s', repeatcount='indefinite')
+      .form__police Нажимая на кнопку, вы даете согласие на обработку <br> своих персональных данных и соглашаетесь <br> с 
+        a(href="#polic_form", data-fancybox='adf')  Политикой конфиденциальности
+
+mixin form5(formClass,formId)
+  - formClass = formClass || ''
+  - formId = formId || ''
+  form(class='form ' + formClass, id=''+formId, action='#', enctype='multipart/form-data')
+    .popup-close 
+      +svg('cross')
+    // Hidden Required Fields
+    input(name='form_subject', value='' + formTitle, type='hidden')
+    input(name='formfile_byklet', value='byklet', type='hidden')
+    // END Hidden Required Fields
+    .form__content
+      .form__img
+        img(src="img/content/f_img.jpg", alt="image")
+      .form__title.form__title--sm Получите буклет о пользе,<br> показаниях и противопоказаниях<br> приема пантовых ванн
+
+      .form__list
+        label.form__item-box 
+          span.form__item
+            input(type='email', required='', name='E-mail', placeholder='E-mail')
+        //- label.form__item-box Укажите телефон
+          span.form__item
+            input(type='tel', required='', name='Телефон', placeholder='Телефон')
+    
+        //- .form__item-box.form__item-box--datetime Укажите дату и время,<br> когда мы можем вам позвонить
+          //- .call-control
+            label.call-control__item.call-control__item--active Позвонить сейчас
+              input(type="radio", name="call_control", value="Позвонить сейчас", checked)
+            label.call-control__item Позвонить позже
+              input(type="radio", name="call_control", value="Позвонить позже")
+
+          span.form__item.form__item--datetime
+            input(type='text', name='Дата звонка', placeholder='Например, 22 февраля')
+    
+
+    .form__foot
+      .form__action
+        button(type='submit').btn.btn--nr.btn--orange Подписаться
+          span.form-load
+            svg.lds-spinner(xmlns='http://www.w3.org/2000/svg', viewbox='0 0 100 100', preserveaspectratio='xMidYMid', style='background:0% 0%')
+              g
+                rect(x='47', y='4.5', rx='30.08', ry='2.88', width='6', height='23')
+                animate(attributename='opacity', values='1;0', dur='1s', begin='-0.9s', repeatcount='indefinite')
+              g(transform='rotate(36 50 50)')
+                rect(x='47', y='4.5', rx='30.08', ry='2.88', width='6', height='23')
+                animate(attributename='opacity', values='1;0', dur='1s', begin='-0.8s', repeatcount='indefinite')
+              g(transform='rotate(72 50 50)')
+                rect(x='47', y='4.5', rx='30.08', ry='2.88', width='6', height='23')
+                animate(attributename='opacity', values='1;0', dur='1s', begin='-0.7s', repeatcount='indefinite')
+              g(transform='rotate(108 50 50)')
+                rect(x='47', y='4.5', rx='30.08', ry='2.88', width='6', height='23')
+                animate(attributename='opacity', values='1;0', dur='1s', begin='-0.6s', repeatcount='indefinite')
+              g(transform='rotate(144 50 50)')
+                rect(x='47', y='4.5', rx='30.08', ry='2.88', width='6', height='23')
+                animate(attributename='opacity', values='1;0', dur='1s', begin='-0.5s', repeatcount='indefinite')
+              g(transform='rotate(180 50 50)')
+                rect(x='47', y='4.5', rx='30.08', ry='2.88', width='6', height='23')
+                animate(attributename='opacity', values='1;0', dur='1s', begin='-0.4s', repeatcount='indefinite')
+              g(transform='rotate(216 50 50)')
+                rect(x='47', y='4.5', rx='30.08', ry='2.88', width='6', height='23')
+                animate(attributename='opacity', values='1;0', dur='1s', begin='-0.3s', repeatcount='indefinite')
+              g(transform='rotate(252 50 50)')
+                rect(x='47', y='4.5', rx='30.08', ry='2.88', width='6', height='23')
+                animate(attributename='opacity', values='1;0', dur='1s', begin='-0.2s', repeatcount='indefinite')
+              g(transform='rotate(288 50 50)')
+                rect(x='47', y='4.5', rx='30.08', ry='2.88', width='6', height='23')
+                animate(attributename='opacity', values='1;0', dur='1s', begin='-0.1s', repeatcount='indefinite')
+              g(transform='rotate(324 50 50)')
+                rect(x='47', y='4.5', rx='30.08', ry='2.88', width='6', height='23')
+                animate(attributename='opacity', values='1;0', dur='1s', begin='0s', repeatcount='indefinite')
+      .form__police Нажимая на кнопку, вы даете согласие на обработку <br> своих персональных данных и соглашаетесь <br> с 
+        a(href="#polic_form", data-fancybox='adf')  Политикой конфиденциальности
+
+mixin form6(formClass,formId)
+  - formClass = formClass || ''
+  - formId = formId || ''
+  form(class='form ' + formClass, id=''+formId, action='#', enctype='multipart/form-data')
+    .popup-close 
+      +svg('cross')
+    // Hidden Required Fields
+    input(name='form_subject', value='' + formTitle, type='hidden')
+    // END Hidden Required Fields
+    .form__content
+      .form__title.form__title--sm Спасибо, что скачали наш буклет
+      .form__list
+        label.form__item-box Как к вам обращаться
+          span.form__item
+            input(type='text', required='', name='Имя', placeholder='Имя')
+      .form__list
+        label.form__item-box На какой E-mail прислать презентацию
+          span.form__item
+            input(type='email', required='', name='E-mail', placeholder='E-mail')
+        label.form__item-box Укажите телефон
+          span.form__item
+            input(type='tel', required='', name='Телефон', placeholder='Телефон')
+    
+        //- .form__item-box.form__item-box--datetime Укажите дату и время,<br> когда мы можем вам позвонить
+          //- .call-control
+            label.call-control__item.call-control__item--active Позвонить сейчас
+              input(type="radio", name="call_control", value="Позвонить сейчас", checked)
+            label.call-control__item Позвонить позже
+              input(type="radio", name="call_control", value="Позвонить позже")
+
+          span.form__item.form__item--datetime
+            input(type='text', name='Дата звонка', placeholder='Например, 22 февраля')
+    
+
+    .form__foot
+      .form__action
+        button(type='submit').btn.btn--nr.btn--orange Заказать буклет
+          span.form-load
+            svg.lds-spinner(xmlns='http://www.w3.org/2000/svg', viewbox='0 0 100 100', preserveaspectratio='xMidYMid', style='background:0% 0%')
+              g
+                rect(x='47', y='4.5', rx='30.08', ry='2.88', width='6', height='23')
+                animate(attributename='opacity', values='1;0', dur='1s', begin='-0.9s', repeatcount='indefinite')
+              g(transform='rotate(36 50 50)')
+                rect(x='47', y='4.5', rx='30.08', ry='2.88', width='6', height='23')
+                animate(attributename='opacity', values='1;0', dur='1s', begin='-0.8s', repeatcount='indefinite')
+              g(transform='rotate(72 50 50)')
+                rect(x='47', y='4.5', rx='30.08', ry='2.88', width='6', height='23')
+                animate(attributename='opacity', values='1;0', dur='1s', begin='-0.7s', repeatcount='indefinite')
+              g(transform='rotate(108 50 50)')
+                rect(x='47', y='4.5', rx='30.08', ry='2.88', width='6', height='23')
+                animate(attributename='opacity', values='1;0', dur='1s', begin='-0.6s', repeatcount='indefinite')
+              g(transform='rotate(144 50 50)')
+                rect(x='47', y='4.5', rx='30.08', ry='2.88', width='6', height='23')
+                animate(attributename='opacity', values='1;0', dur='1s', begin='-0.5s', repeatcount='indefinite')
+              g(transform='rotate(180 50 50)')
+                rect(x='47', y='4.5', rx='30.08', ry='2.88', width='6', height='23')
+                animate(attributename='opacity', values='1;0', dur='1s', begin='-0.4s', repeatcount='indefinite')
+              g(transform='rotate(216 50 50)')
+                rect(x='47', y='4.5', rx='30.08', ry='2.88', width='6', height='23')
+                animate(attributename='opacity', values='1;0', dur='1s', begin='-0.3s', repeatcount='indefinite')
+              g(transform='rotate(252 50 50)')
+                rect(x='47', y='4.5', rx='30.08', ry='2.88', width='6', height='23')
+                animate(attributename='opacity', values='1;0', dur='1s', begin='-0.2s', repeatcount='indefinite')
+              g(transform='rotate(288 50 50)')
+                rect(x='47', y='4.5', rx='30.08', ry='2.88', width='6', height='23')
+                animate(attributename='opacity', values='1;0', dur='1s', begin='-0.1s', repeatcount='indefinite')
+              g(transform='rotate(324 50 50)')
+                rect(x='47', y='4.5', rx='30.08', ry='2.88', width='6', height='23')
+                animate(attributename='opacity', values='1;0', dur='1s', begin='0s', repeatcount='indefinite')
+      .form__police Нажимая на кнопку, вы даете согласие на обработку <br> своих персональных данных и соглашаетесь <br> с 
+        a(href="#polic_form", data-fancybox='adf')  Политикой конфиденциальности
+
+mixin form7(formClass,formId)
+  - formClass = formClass || ''
+  - formId = formId || ''
+  form(class='form ' + formClass, id=''+formId, action='#', enctype='multipart/form-data')
+    .popup-close 
+      +svg('cross')
+    // Hidden Required Fields
+    input(name='form_subject', value='' + formTitle, type='hidden')
+    input(name='formfile_present', value='presentation', type='hidden')
+    // END Hidden Required Fields
+    .form__content
+      .form__title.form__title--sm А вы точно уверены, что все самое<br>  интересное увидели? Посмотрите <br> презентацию о Солонешье в удобное<br> время вместе с родными и друзьями 
+      .form__list
+        label.form__item-box Как к вам обращаться
+          span.form__item
+            input(type='text', required='', name='Имя', placeholder='Имя')
+        
+        .form__item-box.form__item-box--datetime Хотите подписаться на новости?
+          .call-control
+            label.call-control__item.call-control__item--active Подписаться
+              input(type="radio", name="Хотите_подписаться_на_новости", value="Подписаться", checked)
+            label.call-control__item Не подписываться
+              input(type="radio", name="Хотите_подписаться_на_новости", value="Не подписываться")
+
+      .form__list
+        label.form__item-box На какой E-mail прислать презентацию
+          span.form__item
+            input(type='email', required='', name='E-mail', placeholder='E-mail')
+        //- label.form__item-box Укажите телефон
+          span.form__item
+            input(type='tel', required='', name='Телефон', placeholder='Телефон')
+    
+
+
+          //- span.form__item.form__item--datetime
+            input(type='text', name='Дата звонка', placeholder='Например, 22 февраля')
+    
+
+    .form__foot
+      .form__action
+        button(type='submit').btn.btn--nr.btn--orange Получить презентацию
+          span.form-load
+            svg.lds-spinner(xmlns='http://www.w3.org/2000/svg', viewbox='0 0 100 100', preserveaspectratio='xMidYMid', style='background:0% 0%')
+              g
+                rect(x='47', y='4.5', rx='30.08', ry='2.88', width='6', height='23')
+                animate(attributename='opacity', values='1;0', dur='1s', begin='-0.9s', repeatcount='indefinite')
+              g(transform='rotate(36 50 50)')
+                rect(x='47', y='4.5', rx='30.08', ry='2.88', width='6', height='23')
+                animate(attributename='opacity', values='1;0', dur='1s', begin='-0.8s', repeatcount='indefinite')
+              g(transform='rotate(72 50 50)')
+                rect(x='47', y='4.5', rx='30.08', ry='2.88', width='6', height='23')
+                animate(attributename='opacity', values='1;0', dur='1s', begin='-0.7s', repeatcount='indefinite')
+              g(transform='rotate(108 50 50)')
+                rect(x='47', y='4.5', rx='30.08', ry='2.88', width='6', height='23')
+                animate(attributename='opacity', values='1;0', dur='1s', begin='-0.6s', repeatcount='indefinite')
+              g(transform='rotate(144 50 50)')
+                rect(x='47', y='4.5', rx='30.08', ry='2.88', width='6', height='23')
+                animate(attributename='opacity', values='1;0', dur='1s', begin='-0.5s', repeatcount='indefinite')
+              g(transform='rotate(180 50 50)')
+                rect(x='47', y='4.5', rx='30.08', ry='2.88', width='6', height='23')
+                animate(attributename='opacity', values='1;0', dur='1s', begin='-0.4s', repeatcount='indefinite')
+              g(transform='rotate(216 50 50)')
+                rect(x='47', y='4.5', rx='30.08', ry='2.88', width='6', height='23')
+                animate(attributename='opacity', values='1;0', dur='1s', begin='-0.3s', repeatcount='indefinite')
+              g(transform='rotate(252 50 50)')
+                rect(x='47', y='4.5', rx='30.08', ry='2.88', width='6', height='23')
+                animate(attributename='opacity', values='1;0', dur='1s', begin='-0.2s', repeatcount='indefinite')
+              g(transform='rotate(288 50 50)')
+                rect(x='47', y='4.5', rx='30.08', ry='2.88', width='6', height='23')
+                animate(attributename='opacity', values='1;0', dur='1s', begin='-0.1s', repeatcount='indefinite')
+              g(transform='rotate(324 50 50)')
+                rect(x='47', y='4.5', rx='30.08', ry='2.88', width='6', height='23')
+                animate(attributename='opacity', values='1;0', dur='1s', begin='0s', repeatcount='indefinite')
+      .form__police Нажимая на кнопку, вы даете согласие на обработку <br> своих персональных данных и соглашаетесь <br> с 
+        a(href="#polic_form", data-fancybox='adf')  Политикой конфиденциальности
+

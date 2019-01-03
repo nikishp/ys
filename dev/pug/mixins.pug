@@ -1,0 +1,136 @@
+mixin svg(name,mod)
+  - mod = mod || ''
+  svg(class="svg svg--" + name + ' ' + mod)
+    use(xlink:href="img/svg/symbol/sprite.svg#" + name)
+
+mixin svg_c(name,mod)
+  - mod = mod || ''
+  svg(class="svg svg--colored svg--" + name + ' ' + mod)
+    use(xlink:href="img/svg/symbol/sprite-colored.svg#" + name)
+
+mixin recall()
+  .recall-box
+    .recall-box__part
+      b.recall-box__title Закажите звонок
+      p.recall-box__desc Мы позвоним, узнаем о ваших пожеланиях и подготовим ваш идеальный отдых
+    .recall-box__part
+      .recall-box__action
+        a.btn.btn--nr.btn--orange(href="#form1",data-fancybox='mf1',data-options='{"touch" : false}') Позвонить и заказать
+
+mixin recall2()
+  .recall-box
+    .recall-box__part
+      b.recall-box__title Закажите звонок
+      p.recall-box__desc получите консультацию о том, что полезного в пантовых ваннах усадьбы Солонешье и подходят ли они вам лично.
+    .recall-box__part
+      .recall-box__action
+        a.btn.btn--nr.btn--orange(href="#form11", data-fancybox='cf11',data-options='{"touch" : false}') Заказать консультацию
+
+
+mixin recall3(mod)
+  - mod = mod || ''
+  div(class="recall-box" + ' ' + mod)
+    .recall-box__part
+      b.recall-box__title Закажите звонок
+      p.recall-box__desc и поговорите с хозяином усадьбы "Солонешье" 
+    .recall-box__part
+      .recall-box__action
+        a.btn.btn--nr.btn--orange(href="#form11",data-fancybox='casf11',data-options='{"touch" : false}') Заказать звонок
+
+mixin recall4(mod)
+  - mod = mod || ''
+  div(class="recall-box" + ' ' + mod)
+    .recall-box__part
+      b.recall-box__title Закажите звонок
+      p.recall-box__desc и узнайте об уникальном <br> блюде из меню усадьбы "Солонешье" 
+    .recall-box__part
+      .recall-box__action
+        a.btn.btn--nr.btn--orange(href="#form11",data-fancybox='caffasf11',data-options='{"touch" : false}') Заказать звонок и узнать рецепт
+
+
+mixin recall5(mod)
+  - mod = mod || ''
+  div(class="recall-box" + ' ' + mod)
+    .recall-box__part
+      b.recall-box__title Позвоните нам
+      p.recall-box__desc и мы обсудим индивидуальное <br>меню для вас
+    .recall-box__part
+      .recall-box__action
+        a.btn.btn--nr.btn--orange(href="#form11",data-fancybox='cffd11',data-options='{"touch" : false}') Позвонить и забронировать отдых и меню
+
+
+
+mixin recall6(mod)
+  - mod = mod || ''
+  div(class="recall-box" + ' ' + mod)
+    .recall-box__part
+      b.recall-box__title Звоните прямо сейчас и заказывайте отдых на лето
+      p.recall-box__desc Количество мест у нас небольшое, а бронирование началось в октябре 2018 года
+    .recall-box__part
+      .recall-box__action
+        a.btn.btn--nr.btn--orange(href="#form22", data-fancybox='ffrm22',data-options='{"touch" : false}') Позвонить и забронировать отдых в усадьбе "Солонешье"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//- 

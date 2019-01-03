@@ -1,0 +1,253 @@
+// .hidden
+  display: block 
+  background: silver
+  padding-top: 50px
+  padding-bottom: 200px
+.form
+  position: relative
+  max-width: 570px
+  margin-left: auto
+  margin-right: auto
+  padding: 0
+  text-align: center
+  background: #fff
+  .fancybox-button
+    display: none
+.popup-close
+  position: absolute
+  top: 15px
+  right: 15px
+  display: flex
+  align-items: center
+  justify-content: center
+  width: 32px
+  height: 32px
+  cursor: pointer
+  border-radius: 50px
+  background: #f5f1ed
+  .svg
+    +size(10)
+    fill: #9a8f8b
+    transition: fill .25s ease
+  &:hover
+    .svg
+      fill: $orange
+ 
+.form__content
+  padding-top: 45px
+  padding-left: 55px
+  padding-right: 55px
+  +xs-block()
+    padding-left: 10px
+    padding-right: 10px
+    // padding-top: 30px
+.form__title
+  font-size: rem(24)
+  font-weight: 800
+  br
+    +xs-block()
+      display: none
+.form__subtitle
+  margin-top: 10px
+  margin-bottom: 50px
+  font-size: 1rem
+  font-weight: 500
+  line-height: 24px
+  +lh(24,16)
+  br
+    +xs-block()
+      display: none
+
+
+.form__foot
+  position: relative
+  z-index: 2
+  margin-top: 70px
+  padding-left: 55px
+  padding-right: 55px
+  padding-bottom: 40px
+  &::before
+    content: ''
+    position: absolute
+    top: 40px
+    left: 0
+    right: 0
+    bottom: 0
+    z-index: -1
+    background: #f5f1ed
+  +xs-block()
+    padding-left: 10px
+    padding-right: 10px
+    padding-bottom: 30px
+.form__police
+  margin-top: 55px
+  color: #363331
+  font-size: rem(14)
+  font-weight: 400
+  line-height: 20px
+  +lh(20,14)
+  a
+    color: #f07c00
+    text-decoration: underline
+    +xs-block()
+      display: block
+  br
+    +xs-block()
+      display: none
+
+.form__item-box
+  display: block
+  margin-top: 25px
+  color: #363331
+  font-size: 1rem
+  font-weight: 400
+  // line-height: 28px
+  // +lh(28,16)
+.form__item-box--datetime
+  margin-top: 40px
+.form__item
+  display: block
+  max-width: 360px
+  width: 100%
+  height: 70px
+  margin-top: 5px
+  margin-left: auto
+  margin-right: auto
+  border-radius: 20px
+  font-size: 22px
+  font-weight: 400
+  border: 2px solid #cccccc
+  background-color: #ffffff
+  transition: border .25s ease
+  input
+    display: block
+    width: 100%
+    height: 100%
+    padding: 0 15px
+    text-align: center
+    color: #363331
+    border: 0
+    border-radius: 20px
+    user-select: none
+    &::placeholder
+      color: rgba(54, 51, 49, 0.5)
+    &:disabled
+      opacity: .2
+  label.error
+    display: block
+    font-size: 14px
+    line-height: 1
+
+.form__item--textarea
+  height: 160px
+  max-width: 100%
+  font-size: 18px
+  border-radius: 16px
+  border: 2px solid #cccccc
+  background-color: #ffffff
+  textarea
+    display: block
+    width: 100%
+    height: 100%
+    padding: 20px
+    color: #363331
+    border: 0
+    border-radius: 16px
+    &::placeholder
+      color: rgba(54, 51, 49, 0.5)
+.form__item--focus
+  border: 2px solid #f07c00
+
+.form__item--datetime
+  height: 60px
+
+
+.call-control
+  display: flex
+  max-width: 360px
+  width: 100%
+  margin: 5px auto 10px
+
+.call-control__item
+  position: relative
+  display: flex
+  align-items: center
+  justify-content: center
+  width: 50%
+  height: 50px
+  padding: 5px
+  font-size: 16px
+  font-weight: 500
+  line-height: 1
+  border: 1px solid 
+  border-color: #d2cac2
+  background-color: #f5f1ed
+  background: #f5f1ed
+  transition: background .25s ease, color .25s ease, border .25s ease
+  &:first-child
+    border-radius: 12px 0 0 12px
+  &:last-child 
+    border-radius: 0 12px 12px 0
+  input
+    position: absolute
+    top: 0
+    left: 0
+    visibility: hidden
+    opacity: 0
+.call-control__item--active
+  color: #fff
+  border-color: #151413
+  background-color: #151413
+
+
+.custom-btn
+  position: relative
+  max-width: 360px
+  width: 100%
+  height: 0
+  padding-top: 33%
+  border-radius: 20px
+  border: 2px solid $orange
+  overflow: hidden
+  img
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    +object-fit(cover)
+
+.form__foot--custom-btn
+  &::before
+    top: 82px
+
+.form__title--sm
+  margin-bottom: 50px
+  color: #151413
+  font-size: rem(20)
+  font-weight: 600
+  line-height: 28px
+  +lh(28,20)
+
+
+.form__img
+  margin-top: 20px
+  margin-bottom: 70px
+  font-size: 0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*

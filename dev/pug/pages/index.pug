@@ -1,0 +1,863 @@
+extends ../layout/main
+
+block head 
+  - var title = 'Главная'
+  - var bodyClass = ''
+block content
+  section.section#about.about.about--decor.about--bg(data-section="about")
+    .ab-nav
+      .container
+        .row
+          .col
+            .ab-nav__box
+              .f-menu-control
+                span.hamburger.hamburger--collapse
+                  span.hamburger-box
+                    span.hamburger-inner
+              .f-menu
+                ul.f-menu__list
+                  li.f-menu__list-item.f-menu__list-item--active
+                    a.f-menu__list-link(href="#top") 
+                      span Главная
+                  li.f-menu__list-item
+                    a.f-menu__list-link(href="#about") 
+                      span Кто мы
+                  li.f-menu__list-item
+                    a.f-menu__list-link(href="#guests") 
+                      span Кто наши гости
+                  li.f-menu__list-item
+                    a.f-menu__list-link(href="#baths") 
+                      span Пантовые ванны
+                  li.f-menu__list-item
+                    a.f-menu__list-link(href="#welcome") 
+                      span История усадьбы
+                  li.f-menu__list-item
+                    a.f-menu__list-link(href="#tours") 
+                      span Экскурсии и туры
+                  li.f-menu__list-item
+                    a.f-menu__list-link(href="#going") 
+                      span Кухня
+                  li.f-menu__list-item
+                    a.f-menu__list-link(href="#where") 
+                      span Трансфер
+                  li.f-menu__list-item
+                    a.f-menu__list-link(href="#questions") 
+                      span Вопросы и ответы
+              ul.ab-nav__list
+                li.ab-nav__item
+                  a.ab-nav__link(href="#welcome")
+                    span.ab-nav__icon
+                      +svg('ab_nav_1')
+                    b.ab-nav__title Уединение и тишина
+                    p.ab-nav__text комфортный деревянный дом
+                li.ab-nav__item
+                  a.ab-nav__link(href="#baths")
+                    span.ab-nav__icon
+                      +svg('ab_nav_2')
+                    b.ab-nav__title Оздоровление и релаксация
+                    p.ab-nav__text персональные пантовые ванны
+                li.ab-nav__item
+                  a.ab-nav__link(href="#tours")
+                    span.ab-nav__icon
+                      +svg('ab_nav_3')
+                    b.ab-nav__title Экстрим и пешие прогулки
+                    p.ab-nav__text джип-туры, экскурсии, рафтинг, рыбалка
+                li.ab-nav__item
+                  a.ab-nav__link(href="#going")
+                    span.ab-nav__icon
+                      +svg('ab_nav_4')
+                    b.ab-nav__title Домашняя фермерская кухня
+                    p.ab-nav__text вкусная крестьянская еда из алтайских продуктов
+                li.ab-nav__item
+                  a.ab-nav__link(href="#price")
+                    span.ab-nav__icon
+                      +svg('ab_nav_5')
+                    b.ab-nav__title Только с 15 мая по 20 сентября
+                    p.ab-nav__text всего 8 человек одновременно
+    .container.container--about
+      .row
+        .col-lg-8.offset-lg-4
+          .about__title-box 
+            h1.h1 Усадьба
+              span «Солонешье»
+            .about__title-box-desc Приглашает провести мини-отпуск 
+              b на Алтае 
+    .about__box.scene(data-selector=".about__fly-img")
+      //- img.about__static-img.lazy(data-src="img/general/about_fly.png",  data-srcset="img/general/about_static_mob.png", data-sizes="992px", alt="image")
+      picture.about__static-img
+        source(srcset='img/general/about_static_mob.png', media='(max-width: 992px)')
+        source(srcset='img/general/about_fly.png')
+        img(srcset='img/general/about_fly.png', alt='image')
+
+
+      //- img.about__fly-img(src="img/general/about_static.png", alt="image",data-depth="0.05")
+      picture.about__fly-img(data-depth="0.05")
+        source(srcset='#', media='(max-width: 992px)')
+        source(srcset='img/general/about_static.png')
+        img(srcset='img/general/about_static.png', alt='image')
+    .about__foot
+      .container
+        .row
+          .col
+            .about__foot-desc Говорите, на Алтае есть десятки подобных мест? Да, конечно.
+              br
+              | Но мы предлагаем не отдых,
+              b а полную перезагрузку
+            .about__foot-arrow
+              +svg('down-arrow')
+  section.section#why.why.lazy(data-section="why", data-src="img/general/why.jpg")
+    .container
+      .row.row--aic
+        .col-lg-6
+          .info-box
+            h2.h2   Почему
+              span «Солонешье»?
+            .info-box__desc
+              p Теплый, нагретый солнцем воздух, пьянящий запах разнотравья, тишина и стрекот кузнечиков и бесконечное голубое небо. А еще - ощущение оторванности от всего мира - только вы и природа
+              p Давайте представим. Вы приезжаете с компанией за приключениями и яркими впечатлениями. Вас встречают как лучших друзей, и у нас уже все готово.
+              p Вас ждет полноценный курс пантовых ванн, а к ним в придачу - домашняя кухня, экскурсии, рыбалка,  баня, песни у костра и невероятной красоты закаты.
+        .col-lg-6
+          a.why__video-link(href="https://www.youtube.com/watch?v=l6cDjx3aeBg", data-fancybox='video')
+            +svg('play-button') 
+  section.section#honor.honor.honor--decor.honor--bg(data-section="honor")
+    .container
+      .row
+        .col
+          +recall()
+          h2.h2 Мы за честность.
+          .honor__slogan Откровенно говорим о ваших потерях <br> и приобретениях
+
+      .row
+        .col
+          .img-row.img-row--r1
+            .img-part.img-part__l
+              .img-title 
+                b Минус стресс,
+                |  минус усталость,  минус суета - минус все “прелести”  городской жизни
+              .img-box
+                .img-box__symboll.img-box__symboll--minus -
+                img.lazy(data-src="img/content/img_1.jpg", alt="image")
+            .img-part.img-part__r
+              .img-title
+                b  Плюс знакомство с новым форматом 
+                | “Все включено  и сугубо персонально”
+              .img-box
+                .img-box__symboll.img-box__symboll--plus +
+                img.lazy(data-src="img/content/img_2.jpg", alt="image")
+          .img-row.img-row--r2
+            .img-part.img-part__l
+              .img-title 
+                b Минус 2 килограмма веса 
+                | после шести ночей волшебного  сна и пеших прогулок по горам 
+              .img-box
+                .img-box__symboll.img-box__symboll--minus -
+                img.lazy(data-src="img/content/img_3.jpg", alt="image")
+            .img-part.img-part__r
+              .img-box
+                .img-box__symboll.img-box__symboll--plus +
+                img.lazy(data-src="img/content/img_4.jpg", alt="image")
+              .img-title
+                b  Плюс от 2 до 3 тысяч фото 
+                | и видео в вашем телефоне
+          .img-row.img-row--r3
+            .img-part.img-part__l
+              .img-title 
+                b Минус шведский стол 
+                | и ресторан на 120 человек 
+              .img-box
+                .img-box__symboll.img-box__symboll--minus -
+                img.lazy(data-src="img/content/img_5.jpg", alt="image")
+            .img-part.img-part__r
+              .img-title
+                b Плюс от 5 до 8 новых любимых блюд, 
+                | которые вы можете попробовать только здесье
+              .img-box
+                .img-box__symboll.img-box__symboll--plus +
+                img.lazy(data-src="img/content/img_6.jpg", alt="image")
+          .img-row.img-row--r4
+            .img-part.img-part__l
+              .img-box
+                .img-box__symboll.img-box__symboll--minus -
+                img.lazy(data-src="img/content/img_7.jpg", alt="image")
+              .img-title 
+                b Минус 18 - 
+                | при такой температуре  хранится замороженный пант марала  вплоть до применения 
+            .img-part.img-part__r
+              .img-title
+                b Плюс 2 кг веса, 
+                | поскольку у нас  еще никто не отказывался  за обедом и ужином от добавки
+              .img-box
+                .img-box__symboll.img-box__symboll--plus +
+                img.lazy(data-src="img/content/img_8.jpg", alt="image")
+          .img-row.img-row--r5
+            .img-part.img-part__l
+              .img-title Заметный <b>минус в расходах  на лекарства</b> и минус 20% морщин  после оздоровительных ванн  
+              .img-box
+                .img-box__symboll.img-box__symboll--minus -
+                img.lazy(data-src="img/content/img_9.jpg", alt="image")
+
+            .img-part.img-part__r
+              .img-title
+                b Плюс 3 года молодости 
+                | после принятия самых честных пантовых ванн 
+              .img-box
+                .img-box__symboll.img-box__symboll--plus +
+                img.lazy(data-src="img/content/img_10.jpg", alt="image")
+          .img-row.img-row--r6
+            .img-part.img-part__l
+              .img-title 
+                b Минус целая неделя интернет-
+                | зависимости, проведенная без связи и вай-фая
+              .img-box
+                .img-box__symboll.img-box__symboll--minus -
+                img.lazy(data-src="img/content/img_11.jpg", alt="image")
+            .img-part.img-part__r
+              .img-box
+                .img-box__symboll.img-box__symboll--plus +
+                img.lazy(data-src="img/content/img_12.jpg", alt="image")
+              .img-title <b>Плюс</b> ответ на вопрос, почему <b>люди  влюбляются в Алтай с первого взгляда  и на всю жизнь  </b>
+  section.section#wait.wait.lazy(data-section="wait", data-src="img/general/wait.jpg")
+    .container
+      .row
+        .col
+          .wait__text Ждете изменений в жизни?
+            b Будут!
+            span После отпуска в Солонешье.
+          .wait__desc А перед поездкой позвоните и спросите, о чем мы не написали.
+          .wait__action
+            a.btn.btn--lg.btn--fluid.btn--orange(href="#form2",data-fancybox="f2", data-options='{"touch" : false}') Позвонить и узнать, о чем мы забыли написать
+  section.section#guests.guests.guests--decor.guests--bg(data-section="guests")
+    .container
+      .row
+        .col 
+          h2.h2 Наши гости 
+            span ценят уединение
+      .row.row--aic.row--gst1
+        .col-lg-5.img-part.img-part__l
+          .img-title Вам будет у нас максимально удобно, если вы - <b>небольшая компания друзей, коллег, родных.</b>
+        .col-lg-7.img-part.img-part__r
+          .img-box
+            img.lazy(data-src="img/content/g_1.jpg", alt="image")
+      .row.row--aic.row--gst2
+        .col-lg-5.img-part.img-part__l
+          .img-title Вы можете провести здесь <b>камерные тимбилдинговые мероприятия </b>и <b> оздоровительные практики </b>в компактных  группах - йога или цигун.
+            p Для этого у нас есть отдельный зал - настоящая монгольская юрта. 
+        .col-lg-7.img-part.img-part__r
+          .img-box
+            img.lazy(data-src="img/content/g_2.jpg", alt="image")
+      .row.row--aic.row--gst3
+        .col-lg-5.img-part.img-part__l
+          .img-box
+            img.lazy(data-src="img/content/g_3.jpg", alt="image")
+          .img-title Наши гости Джон Уоррен и Екатерина Рождественская
+        .col-lg-7.img-part.img-part__r
+          .img-box
+            img.lazy(data-src="img/content/g_4.jpg", alt="image")
+      .row.row--aic.row--gst4
+        .col-lg-7.img-part.img-part__l
+          .img-box
+            img.lazy(data-src="img/content/g_5.jpg", alt="image")
+        .col-lg-5.img-part.img-part__r
+          .img-title 
+            b Перед вашим приездом мы зададим много вопросов. 
+            | Все для того, чтобы сделать ваш отпуск максимально насыщенным и запоминающимся.
+            p Мы специально 
+              b отказались от автоматического бронирования 
+              | на сайте, чтобы иметь возможность подробно поговорить с вами до приезда и составить одробный список пожеланий.
+      .row.row--aic.row--gst5
+        .col-lg-5.img-part.img-part__l
+         .img-title 
+            .img-title-sl Будьте готовы к сюрпризам
+            p Люди по-разному реагируют на чистый горный воздух и интенсивное оздоровление. 
+            p Одни высыпаются на месяц вперед, в других пробуждается такая энергия, что она заставляет каждый день отправляться на новую экскурсию. 
+            p 
+              b Вы вернетесь домой помолодевшими и заряженными как минимум на год.
+        .col-lg-7.img-part.img-part__r
+          .img-box
+            img.lazy(data-src="img/content/g_6.jpg", alt="image")
+      .row
+        .col-lg-5.offset-lg-7
+          .warning
+            .warning__img
+              +svg("sd-card")
+            .warning__desc 
+              b Предупреждаем! 
+              br
+              | Карта памяти в вашем телефоне  или фотоаппарате должна быть  вместительной.
+              p И возьмите с собой переносной  аккумулятор. 
+                b Самый яркий кадр  всегда случается неожиданно.
+  section.section#baths.baths.baths--decor(data-section="baths")
+    .container
+      .row 
+        .col 
+          h2.h2 Пантовые ванны 
+            span в усадьбе "Солонешье" особенные
+
+    .container.container--custom
+      .row
+        .col-md-6.baths__box-part.baths__box-part--l
+          .baths__img: img.lazy(data-src="img/content/baths_1.jpg", alt="image")
+          .baths__img: img.lazy(data-src="img/content/baths_2.jpg", alt="image")
+        .col-md-6.baths__box-part.baths__box-part--r
+          .text-box.text-box--baths Мы готовим раствор для них по технологии, одобренной Всероссийским НИИ пантового оленеводства.
+            p 
+              b В 150 литров воды мы добавляем вытяжку  из 1,5 кг свежезамороженного панта.
+            p Вытяжка для каждого клиента варится отдельно. Для этого у нас есть пять котлов.
+
+            .baths__desc-title На весь курс у вас будет 
+              b ванна с индивидуальным раствором
+            p Сразу после срезки панта мы замораживаем его и бережно храним при температуре -18° вплоть до момента использования
+            p На ваших глазах пант достанут из морозильной камеры, положат на весы и затем порежут на тонкие пластинки, из которых сделают раствор. Наши гости с удовольствием участвуют в этом процессеи фотографируют. 
+            p
+              b В маральниках вы такой способ не встретите. 
+            p Но это еще не все. Мы решили улучшить качество наших ванн и провели специальное исследование в НИИ пантового оленеводства.
+            p 
+              b И теперь в нашей усадьбе есть ультразвуковая установка, 
+              | которая выделяет из панта еще больше полезных веществ и делает раствор более концентрированным.
+    .container
+      .row 
+        .col 
+          .baths__foot
+            .baths__foot-desc Такой <b>инновационный подход</b> к пантовым ваннам на всей территории Алтая <b>есть только у нас</b>
+
+            .baths__foot-img: img.lazy(data-src="img/content/baths_f.png", alt="image")
+  section.section#what.what.lazy(data-section="what", data-src="img/general/what.jpg")
+    .container
+      .row
+        .col-lg-7.offset-lg-5
+          .info-box.info-box--normall
+            h2.h2 Что такое панты 
+              span и пантовые ванны?
+            .info-box__desc
+              p Панты - это весенние рога марала. В России он живет на Алтае и здесь считается священным животным. Во все времена к нему относились с большим уважением и почтением. 
+              p Алтайцы говорят, что <b>на рогах у него солнце и луна -</b> символ гармонии. Существовала даже  егенда о белом марале, который придет на землю, когда люди станут лучше и чище. 
+              p 
+                b Весной у марала рога начинают активно расти, до 25 мм в день. Именно в это время в крови  ивотного невероятно много жизненных сил и энергии.
+              p Молодые мягкие бархатистые панты срезают, и кровь, содержащуюся в них, применяют для оздоровления.
+            .info-box__action
+              a.btn.btn--empty.btn--nr.pantu-wrap-js(href="#form2",data-fancybox="pf2", data-options='{"touch" : false}') Узнать больше о пантовых ваннах
+  
+  .moralu-wrap
+    section.section#pantu.pantu.lazy(data-section="pantu", data-src="img/general/pantu2.jpg")
+      .container
+        .row
+          .col-lg-5
+              h2.h2 Панты - это <br> природное <br> сокровище 
+              .info-box__desc
+                p Марал носит на своей голове целую аптеку: 
+                p 
+                  ul
+                    li аминокислоты, коллаген, пептиды, витамины, макро-  и микроэлементы
+                    li гормоны и гормоноподобные вещества - от гормона   роста (помните, как быстро растут панты весной?)    до половых гормонов
+                    li липиды, которые связывают токсины и помогают    выводить их из организма
+                    li такие микроэлементы, как железо, медь, цинк, калий,    марганец, кобальт.
+
+                p Алтайские панты ценнее американских и новозеландских аналогов
+                p.mtc
+                  b Наши горы входят в 10 самых экологически чистых мест на земле с огромным числом лекарственных трав. Их целебная сила - в крови марала.
+    section.section#bathsb.bathsb.bathsb--bg.bathsb--decor.lazy(data-section="bathsb")
+      .container
+        .row 
+          .col 
+            +recall2()
+            h2.h2 Ванны - <i>самый<br> простой, но </i> эффективный<br> способ оздоровления
+
+      .container.container--custom
+        .row
+          .col-md-6.baths__box-part.baths__box-part--l
+            .baths__img: img.lazy(data-src="img/content/baths_3.jpg", alt="image")
+          .col-md-6.baths__box-part.baths__box-part--r
+            .text-box.text-box--baths 
+              p Активные вещества, которые есть в крови марала, проникают в ваш организм через кожу, когда вы принимаете ванны.
+              p Плюс вы пьете эликсир молодости пантогематоген.
+              p Запускается активный процесс: вывод токсинов, питание, обогащение энергией, активизация ваших собственных сил и механизмов.
+              p 
+                b Словно в вас появилось экологически чистое биотопливо.
+              p  И, заметьте, ничего делать не надо - просто лежать в теплой водичке. Легче легкого.
+              .baths__desc-title Уже <b>с первой процедуры</b>  начинается <b>трансформация </b>
+
+            
+      .container.container--custom.container--custommt
+        .row.row-baths
+          .col-md-6.baths__box-part.baths__box-part--l
+            .baths__img: img.lazy(data-src="img/content/baths_4.jpg", alt="image")
+            p.sc Скачайте буклет и узнайте о пользе, показаниях <br>и противопоказаниях приема пантовых ванн
+
+          .col-md-6.baths__box-part.baths__box-part--r
+            .text-box.text-box--baths Перед процедурой мы пригласим вас посетить парилку или кедровую фитобочку. Так тело распарится, и кожа лучше впитает полезные вещества.
+              p После ванны угостим ароматным чаем с горным медом. И помните: после ванн какое-то время лучше воздержаться от душа, чтобы не смывать целебный раствор. 
+              p 
+                b Вы пройдете 10 процедур, по две ванны - утром и вечером в течение пяти дней. 
+              p Время приема - до 15 минут.
+              p Этого будет достаточно, чтобы потом в течение нескольких месяцев очень редко вспоминать или вовсе забыть  <b>о больных позвоночнике, суставах или кожных проблемах</b>
+
+
+            
+
+
+      .container
+        .row 
+          .col 
+            .bathsb__action
+              a.btn.btn--empty.btn--nr(href="#form5", data-fancybox="bfrm5", data-options='{"touch" : false}') Cкачать буклет о пантовых ваннах
+    section.section#result.result.lazy(data-section="result", data-src="img/general/result.jpg")
+      .container
+        .row
+          .col-12
+            h2.h2 Результаты пантолечения, 
+              span которые отметили наши гости:
+
+          .col-lg-5
+            ul.check-list
+              li.check-list__item
+                +svg('check')
+                | Артериальное давление нормализуется
+              li.check-list__item
+                +svg('check')
+                | Боли в позвоночнике и суставах забываются
+              li.check-list__item
+                +svg('check')
+                | Боли в позвоночнике и суставах забываются
+              li.check-list__item
+                +svg('check')
+                | Настроение улучшается
+              
+            .result__title А еще:
+
+            ul.check-list
+              li.check-list__item
+                +svg('check')
+                | Нервы крепче канатов
+              li.check-list__item
+                +svg('check')
+                | Кожа словно бархатная, морщин меньше
+              li.check-list__item
+                +svg('check')
+                | Обостряются все чувства и эмоции
+              li.check-list__item
+                +svg('check')
+                | Гормон радости - ваш постоянный спутник
+          .col-lg-7
+            .result__collage
+              img.lazy(data-src="img/content/res_1.jpg", alt="image")
+              img.lazy(data-src="img/content/res_2.jpg", alt="image")
+              img.lazy(data-src="img/content/res_3.jpg", alt="image")
+
+        .row.result-foot.row--aic
+          .col-lg-5
+            h3.h3 Отпуск без обновления - деньги на ветер
+            p Позвоните сейчас и закажите зарядку <br>для аккумулятора вашего тела и духа
+          .col-lg-7
+            .result__action
+              a.btn.btn--nr.btn--orange.btn--fluid(href="#form22", data-fancybox='sf22', data-options='{"touch" : false}') Позвонить и заказать оздоровление
+    
+  section.section#price.price.lazy(data-section="price", data-src="img/general/price.jpg")
+    .container
+      .row
+        .col-12
+          h2.h2 Стоимость отдыха
+            span с курсом пантовых ванн:
+          .price__term Срок 6 ночей, 7 дней 
+
+      .row.price-option
+        .col-lg-3
+          .price__box 2-местное размещение
+            b.price__box-cost 45 000 руб/чел. 
+        .col-lg-3
+          .price__box 1-местное размещение
+            b.price__box-cost 55 000 руб/чел. 
+        .col-lg-6
+          .price__box 2-местное размещение, если вы  принимаете одну ванну на двоих
+            b.price__box-cost 35 000 руб/чел. 
+          .price__explanation Фитобочка (травяные сборы) 15-20 минут – <b>500 рублей</b><br> Есть услуги массажа
+      .price__foot
+        .row.row--aic
+          .col-lg-4
+            .price__options
+              .price__options-title В эту стоимость входит:
+              .price__option
+                +svg('pric_1')
+                | Проживание в усадьбе, экскурсия в сафари-парк
+              .price__option
+                +svg('pric_2')
+                | 10 ванн в течение 5 дней  с ежедневным приемом бани
+              .price__option
+                +svg('pric_3')
+                | 3-разовое питание, фиточаи, прием пантогематогена
+          .col-lg-5.offset-lg-3
+            .price__actions
+              a.btn.btn--empty.btn--nr.btn--grey(href='#graf_bron') Посмотреть график бронирования
+              a.btn.btn--nr.btn--orange.btn--fluid(href='#form11', data-fancybox='prfrm1' , data-options='{"touch" : false}') Заказать отдых с пантовыми ваннам
+  section.section#welcome.welcome.welcome--decor(data-section="welcome")
+    .container
+      .row
+        .col-lg-6.zic
+          h2.h2 Добро пожаловать 
+            span в наш уютный дом!
+          .welcome__desc
+            p Дорогие друзья!
+            p Я строил этот дом 
+              b для отдыха с близкими и друзьями. <br>
+              | Усадьба даже сначала называлась  "Андреевское".<br> Тщательно выбирал место - чтобы только горы, <br> река и лес. Сейчас на 3 километра нет посторонних. <br>
+              b Чужие здесь не ходят.
+            p В прошлом году по сравнению с маральниками,<br>  санаториями и отелями у нас отдохнуло совсем <br>мало людей. Мы этого и не скрываем - у нас<br> другие приоритеты.
+            p 
+              b Усадьба может принять за весь сезон всего-то <br> около 100 человек в 14 заездах, то есть не более <br>  8 человек одновременно. А обслуживающий <br>  персонал - 4 человека. Меньше гостей на Алтае <br>  только в резиденциях первых лиц государства.
+            p Мне важно, чтобы усадьба и через пять, и через <br> десять лет 
+              b оставалась такой же, как в первый день.
+            p Чтобы трава на лужайке была зеленая, а не вытоптанная <br> сотнями туристов. Чтобы на склоне за домом можно  <br>  было по утрам умываться в росе, а днем собирать  <br> травы для ароматного чая. Чтобы баня, здравница  <br> и летняя кухня, где наши гости ужинают и засиживаются  <br> допоздна, были как дома.
+            p 
+              b Я хочу, чтобы все, кто к нам приедет, смогли насладиться<br> нашим гостеприимством и понять, за что мы так любим<br> наш Алтай и наше Солонешье.<br> Я сам с радостью встречаю и провожаю гостей.<br>
+          .welcome__foot
+            .welcome__foot-item.welcome__foot-item--text
+              strong.welcome__name Андрей Сизинцев 
+              | хозяин усадьбы "Солонешье", руководитель краевой ассоциации "Крестьянское гостеприимство"
+            .welcome__foot-item.welcome__foot-item--logo: img.lazy(data-src="img/content/emblem.jpg", alt="image")
+
+
+        .col-lg-6
+          .welcome__img: img.lazy(data-src="img/content/boss.jpg", alt="imge")
+      .welcome__call
+  section.section#gallery.gallery.gallery--bg(data-section="gallery")
+    .container
+      .row
+        .col
+          +recall3('gallery--recall')
+    .sl-wrap.sl-wrap--gallery
+      .sl
+        .sl__item
+          a.sl__item-link(href="img/content/gallery/sl_1.jpg", data-fancybox="gallery_fn")
+            img( data-lazy="img/content/gallery/sl_1.jpg", alt="image")
+        .sl__item
+          a.sl__item-link(href="img/content/gallery/sl_2.jpg", data-fancybox="gallery_fn")
+            img( data-lazy="img/content/gallery/sl_2.jpg", alt="image")
+        .sl__item
+          a.sl__item-link(href="img/content/gallery/sl_3.jpg", data-fancybox="gallery_fn")
+            img( data-lazy="img/content/gallery/sl_3.jpg", alt="image")
+        .sl__item
+          a.sl__item-link(href="img/content/gallery/sl_4.jpg", data-fancybox="gallery_fn")
+            img( data-lazy="img/content/gallery/sl_4.jpg", alt="image")
+        .sl__item
+          a.sl__item-link(href="img/content/gallery/sl_5.jpg", data-fancybox="gallery_fn")
+            img( data-lazy="img/content/gallery/sl_5.jpg", alt="image")
+      .container
+        .row
+          .col
+            .sl__control
+              .sl__control-arrow
+  section.section#tours.tours.tours--decor(data-section="tours")
+    .container
+      .row
+        .col-12
+          .h2 Экскурсии и туры
+            span За семь лет у нас никогда не было абсолютных повторов
+        .col-lg-4
+          .tours__desc 
+            b Мы каждый раз подстраиваемся под 
+            | пожелания наших гостей, физическое и эмоциональное состояние, реакцию организма на оздоровительные процедуры.
+        .col-lg-4.offset-lg-3
+          .tours__desc Определиться с тем, что понравилось, вы можете уже сейчас, а на месте мы откорректируем. Что выбрать?
+            <br> 
+            b Вариантов много. 
+
+    .sl-wrap.sl-wrap--tours
+      .sl
+        .sl__item
+          a.sl__item-link(href="img/content/tours/sl_1.jpg", data-fancybox="tours_fn")
+            img( data-lazy="img/content/tours/sl_1.jpg", alt="image")
+        .sl__item
+          a.sl__item-link(href="img/content/tours/sl_2.jpg", data-fancybox="tours_fn")
+            img( data-lazy="img/content/tours/sl_2.jpg", alt="image")
+        .sl__item
+          a.sl__item-link(href="img/content/tours/sl_3.jpg", data-fancybox="tours_fn")
+            img( data-lazy="img/content/tours/sl_3.jpg", alt="image")
+        .sl__item
+          a.sl__item-link(href="img/content/tours/sl_4.jpg", data-fancybox="tours_fn")
+            img( data-lazy="img/content/tours/sl_4.jpg", alt="image")
+        .sl__item
+          a.sl__item-link(href="img/content/tours/sl_5.jpg", data-fancybox="tours_fn")
+            img( data-lazy="img/content/tours/sl_5.jpg", alt="image")
+      .container
+        .row
+          .col
+            .sl__control
+              .sl__control-arrow
+  section.section#advant.advant.advant--bg(data-section="advant")
+    .container
+      .row.row--aic
+        .col-lg-6
+          .advant__img: img.lazy(data-src="img/content/advant_1.jpg", alt="image")
+        .col-lg-6.col-xl-5.offset-xl-1
+          h2.h2 Активно <br> и с адреналином
+          p Вы совершите радиальные велосипедные прогулки по горам или отправитесь в комбинированные туры  на джипах и пешком до водопадов и в пещеры.
+          p Хотите увидеть один из самых высоких на Алтае водопадов и узнать, почему он называется Седая борода?
+          p И побывать в пещере, где 50 тысяч лет назад жили представители “денисовского человека” - подвида человека разумного? 
+          p 
+            b Алтай - это колыбель человечества.
+      .row.row--aic
+        .col-lg-5
+          h2.h2 Вкусно <br> и по-русски
+          p Оцените крестьянское гостеприимство!
+          p Гурманам и ценителям народных традиций понравятся <b>фольклорно-гастрономические туры в деревни староверов. </b>
+          p Наши солонешенские бабушки дадут фору бурановским - так звонко и задорно они поют, а еще кормят штями, поят медовухой и  даже могут сыграть вам свадебку.
+          p Приглашаем на туры <b>"Кержацкий уклад" и "Окручивание невесты"</b>
+        .col-lg-6.col-xl-5.offset-xl-1
+          .advant__img: img.lazy(data-src="img/content/advant_2.jpg", alt="image")
+      .row.row--aic
+        .col-lg-6
+          .advant__img: img.lazy(data-src="img/content/advant_3.jpg", alt="image")
+        .col-lg-6.col-xl-5.offset-xl-1
+          h2.h2 В гармонии <br> с природой
+          p Возможно, вы захотите испытать азарт рыбака и половить хариуса прямо возле дома или съездить за радужной форелью на специальное озеро?
+          p И даже если все эти активности - не ваш вариант,  мы найдем, чем вас сильно удивить. В сафари-парке,  прямо вокруг усадьбы, живут маралы, косули, глухари и другие животные, не считая овец и лошадей.
+          p Хотите своими<b> глазами увидеть оленей в дикой  природе?</b> Они совсем рядом, хотя и пугливы,  как все дикие животные.
+  section.section#going.going(data-section="going")
+    .container
+      .row
+        .col-12
+          h2.h2 К нам едут, чтобы вкусно поесть
+      .row.row--aic
+        .col-lg-4
+          p Мы накормим вас по-домашнему из собственных фермерских продуктов.
+          p У нас есть свой огород, и гости любят нарвать петрушки для салата  или накопать картошечки к обеду.
+          p А наша корова Машка много гуляет  и вовсю старается, чтобы дать вам  молочка и сливочек со вкусом  алтайского разнотравья.
+        .col-lg-8
+          .going__img: img.lazy(data-src="img/content/going_1.jpg", alt="image")
+      .row.row--aic
+        .col-lg-7
+          .going__img: img.lazy(data-src="img/content/going_2.jpg", alt="image")
+        .col-lg-4
+          p 
+            b Мёд и медовуха, несколько видов мяса, птицы, рыбы, сыры из частной сыроварни, травяные чаи и морсы, грибы, ягоды и варенье -
+          p и все это любовно приготовлено нашим шеф-поваром Евгенией Кожевниковой с учетом ваших предпочтений.
+
+      .row.row--aic
+        .col-lg-4
+          p Иногда наши гости не выдерживают и сами что-то готовят из отменных  местных продуктов.
+          p После всего этого у вас останется один вопрос: как исхитриться и приготовить  что-то подобное по возвращении домой  из тех продуктов, что вы сможете купить  в супермаркете.
+        .col-lg-8
+          .going__img: img.lazy(data-src="img/content/going_3.jpg", alt="image")
+  section.section#menu.menu.menu--decor.menu--bg(data-section="menu")
+    .container
+      .row
+        .col-12
+          +recall4('menu--recall')
+      .row.row--aic.row--menu1
+        .col-lg-4
+          h3.h3 Меню 
+            span на завтраки:
+          ul.menu__list
+            li.menu__list-item домашний творог
+            li.menu__list-item сырники, запеканки
+            li.menu__list-item каши
+            li.menu__list-item сыры
+            li.menu__list-item омлеты, яичницы
+            li.menu__list-item драники,
+            li.menu__list-item оладьи, блины
+            li.menu__list-item деревенское молоко
+            li.menu__list-item сливочное масло, мед
+            li.menu__list-item мясные и колбасные нарезки из фермерских продуктов
+        .col-lg-8
+          .row
+            .col-lg-6
+              .menu__img: img.lazy(data-src="img/content/m_1.png", alt="image")
+            .col-lg-6
+              .menu__img: img.lazy(data-src="img/content/m_2.png", alt="image")
+            .col-lg-6
+              .menu__img: img.lazy(data-src="img/content/m_3.png", alt="image")
+            .col-lg-6
+              .menu__img: img.lazy(data-src="img/content/m_4.png", alt="image")
+      .row.row--aic.row--menu2
+        .col-lg-8
+          .row.row--aic
+            .col-lg-6
+              .menu__img: img.lazy(data-src="img/content/m_5.png", alt="image")
+              .menu__img: img.lazy(data-src="img/content/m_6.png", alt="image")
+              .menu__img: img.lazy(data-src="img/content/m_7.png", alt="image")
+              .menu__img: img.lazy(data-src="img/content/m_8.png", alt="image")
+            .col-lg-6
+              .menu__img: img.lazy(data-src="img/content/m_9.png", alt="image")
+              .menu__img: img.lazy(data-src="img/content/m_10.png", alt="image")
+              .menu__img: img.lazy(data-src="img/content/m_11.png", alt="image")
+        .col-lg-4
+          h3.h3 Меню 
+            span основных блюд:
+          ul.menu__list
+            .menu__list-item Салаты из сезонных овощей
+            .menu__list-item Разносолы летнего быстрого посола (помидоры, огурчики, капуста)
+            .menu__list-item Супы на курином бульоне (из домашних курочек) 
+            .menu__list-item Шурпа из баранины/марала, приготовленная в казане на костре
+            .menu__list-item Борщ с деревенской сметаной
+            .menu__list-item Щи с квашеной капустой
+            .menu__list-item Уха из свежепойманной рыбы
+            .menu__list-item Блюда из парной баранины:
+            .menu__list-item запеченная в духовке, жаркое, котлеты на гриле
+            .menu__list-item Блюда азиатской кухни: бешбармак, манты из баранины, киргизский плов
+            .menu__list-item Блюда из оленины: бефстроганов, рагу, оленина под брусничным  соусом с кедровым орехом
+            .menu__list-item Маралятина: тушенная с грибами, котлеты, запеченные  в духовке
+  section.section#tv.tv.tv--bg(data-section="tv")
+    .container
+      .row
+        .col-12
+          h2.h2 Мы участвуем в съемках <br> телевизионных программ
+      .row.row--tvmt1
+        .col-lg-6 
+          p Хотите увидеть, что едят в сибирской глуши? У нас в гостях были <b>Джон Уоррен со своей “Поедем-поедим”</b> и журналисты Алтайского краевого<b> телевидения "Катунь-24".</b>
+        .col-lg-6 
+          p Прежде чем вы приедете к нам, советуем посмотреть эти передачи. Хозяин усадьбы Андрей Сизинцев - виртуоз  за рулем джипа, на рыбалке, на охоте, на кухне и на экране телевизора. Посмотрите, как мастерски он готовит брутальные  мужские блюда из мяса и рыбы по народным рецептам.
+
+      .row.row--tvmt2
+        .col-12 
+          p Советуем смотреть не больше одного видео за день,  <br>не на голодный желудок и сразу конспектировать рецепты.
+
+        .col-lg-3.col-sm-6
+          .video__item(data-youtube='PMSaq9S8gf4')
+        .col-lg-3.col-sm-6
+          .video__item(data-youtube='PMSaq9S8gf4')
+        .col-lg-3.col-sm-6
+          .video__item(data-youtube='PMSaq9S8gf4')
+        .col-lg-3.col-sm-6
+          .video__item(data-youtube='PMSaq9S8gf4')
+  section.section#where.where(data-section="where")
+    .container
+      .row
+        .col
+          +recall5('where--recall')
+
+      .row.row--where-first.row--aic
+        .col-lg-6
+          h2.h2 Добраться <br> до нас просто
+        .col-lg-5.offset-lg-1
+          p
+            b Алтай ближе, чем кажется, и мы это вам докажем. <br>Вы поедете до Солонешья в комфортных условиях.
+
+      .row.row--where-second
+        .col-lg-6
+          p
+            b Мы организовываем трансфер из аэропорта  Новосибирска и Барнаула, от железнодорожного  вокзала Новосибирска, Барнаула, Бийска.
+          p Стоимость трансфера (туда и обратно) Барнаул -<br>  Усадьба "Солонешье" - Барнаул (легковой автомобиль до 4 человек) - 
+            br
+            b 13 000 рублей
+          p Барнаул - Усадьба "Солонешье" - Барнаул (минивен до 6 человек) - 
+            br
+            b 16 000 рублей
+          p Барнаул - Усадьба "Солонешье" - Барнаул (микроавтобус до 10 человек) - 
+            br
+            b 20 000 рублей
+          p Горно-Алтайск - Усадьба "Солонешье" - Горно-Алтайск <br> (легковой автомобиль до 4 человек) - 
+            br
+            b 10 000 рублей.
+          p Горно-Алтайск - Усадьба "Солонешье" - Горно-Алтайск<br> (минивен до 6 человек) - 
+            br
+            b 12 000 рублей
+          p Горно-Алтайск - Усадьба "Солонешье" - Горно-Алтайск <br> (микроавтобус до 10 человек) - 
+            br
+            b 16 000 рублей
+
+
+
+        .col-lg-5.offset-lg-1
+          p
+            b Расстояние до усадьбы Солонешье" <br>и время в пути
+
+          p Расстояние до усадьбы Солонешье" 
+            br
+            | и время в пути
+          p г. Новосибирск - Усадьба "Солонешье" <br> 520 км, время в пути ~6:30-7:00 часов
+          p г. Барнаул - Усадьба "Солонешье" <br> 330 км, время в пути ~4:30-5:00 часов
+          p Аэропорт г. Горно-Алтайска <br> - Усадьба "Солонешье" 220 км, <br> время в пути ~3:30-4:00 часа
+          p г. Бийск - Усадьба "Солонешье"<br> 170 км, время в пути ~2:30-3:00 часа
+
+          .where__foot Позвоните и уточните, <br> как к нам доехать
+            .where__foot-action
+              a.btn.btn--nr.btn--orange(href="#form22", data-fancybox='road',data-options='{"touch" : false}') Уточнить дорогу
+  section.section#map.map.lazy(data-section="map", data-src="img/general/map.jpg")
+    .container
+      .row
+        .col
+          #map-box.map__box
+            <iframe src="https://yandex.ru/map-widget/v1/-/CBRuAVXQhA" width="560" height="400" frameborder="1" allowfullscreen="true"></iframe>
+  section.section#questions.questions.questions--decor(data-section="questions")
+    .container
+      .row
+        .col-12
+          h2.h2 Вопросы, которые <br> нам обычно задают
+      .row
+        .col-lg-5
+          .questions__box
+            .questions__title
+              +svg_c('quest')
+              |  Можно ли приехать с детьми?
+            .questions__answer Пантовые ванны детям до 14 лет принимать не рекомендуется. Да и отдых, который мы организуем, маленьким детям будет не интересен, и это испортит отпуск родителей. Поэтому мы приглашаем взрослых  гостей.
+
+          .questions__box
+            .questions__title
+              +svg_c('quest')
+              | Могу я забронировать всю усадьбу      для компании меньше 8 человек?
+            .questions__answer Да, конечно, такой вариант возможен. Мы посчитаем стоимость вашего отдыха по средней цене. 
+
+          .questions__box
+            .questions__title
+              +svg_c('quest')
+              | Если наша компания больше 8 человек,      мы сможем к вам приехать?
+            .questions__answer В нашей усадьбе 4 двухместных номера, больше гостей мы, к сожалению, принять не можем. Но мы посоветуем  вам другой достойный вариант. 
+
+          .questions__box
+            .questions__title
+              +svg_c('quest')
+              | Есть  ли скидки для семейных пар, которые хотят       принять одну ванну на двоих?
+            .questions__answer Да, если вы будете принимать одну ванну совместно, в этом случае стоимость путевки составит 35 000 руб. с человека.
+
+
+          .questions__box
+            .questions__title
+              +svg_c('quest')
+              | У вас действительно нет связи?
+            .questions__answer Да, это сделано специально, чтобы отдохнуть от "благ" цивилизации. Усадьба расположена в урочище Макарьев Лог, в 3 километрах от ближайшей деревни. Поблизости  нет ни турбаз, ни охотничьих домиков. 
+              p Мы гарантируем, что никто не нарушит ваш отдых звонками и сообщениями. А если вам все-таки нужно будет позвонить или выйти в интернет, в усадьбе есть машина, которая довезет вас до точки, где есть связь.
+
+          .questions__box
+            .questions__title
+              +svg_c('quest')
+              | Нужна страховка от клеща?
+            .questions__answer Да, в горах летом клещи активны, и лучше позаботиться об этом перед поездкой. Вы можете сделать прививку или купить страховку. Но зато в наших горах совсем нет комаров!
+        .col-lg-5.offset-lg-1
+          .questions__box
+            .questions__title
+              +svg_c('quest')
+              |  Если понадобится медицинская помощь? 
+            .questions__answer  Медицинскую помощь при необходимости окажут в ближайшем населенном пункте. Кроме того, с вами постоянно будет наш медицинский работник, который контролирует прием пантовых ванн и здоровье наших  гостей. 
+
+          .questions__box
+            .questions__title 
+              +svg_c('quest')
+              |  Сможете ли вы готовить нам только       вегетарианские блюда? 
+            .questions__answer Мы накормим любого изысканного гурмана и, конечно, вегетарианца. На Алтае большое разнообразие любых продуктов, в том числе собственные овощи, ягоды, грибы, злаковые культуры. 
+
+          .questions__box
+            .questions__title
+              +svg_c('quest')
+              |  Сможете ли вы организовать охоту? 
+            .questions__answer Летом охота возможна только парковая, на территории сафари-парка. Такую охоту мы можем сделать по  желанию гостей. Если вы приедете к нам в сезон охоты, вы можете разместиться в нашей усадьбе, мы поможем с оформлением лицензии.
+              p А вот с рыбалкой все проще и удобнее. Если повезет,  вы поймаете хариуса прямо в нашей речке возле дома.  Мы также можем организовать рыбалку на озере и отвезти вас на самые рыбные речки. 
+
+          .questions__box
+            .questions__title
+              +svg_c('quest')
+              |     Я никогда не слышал о Солонешье.       Почему я должен выбрать это место? 
+            .questions__answer Алтай очень разный, и любому туристу здесь будет интересно. Мы приглашаем вас приехать только  на неделю. Погостив у нас, за один отпуск вы можете съездить и посмотреть еще и те места, которые хорошо  распиарены - Чуйский тракт, Телецкое озеро, Чемал, Бирюзовую Катунь. 
+              p В Солонешенском районе Алтайского края не менее прекрасные горы, хотя и отличаются от Горного Алтая. Но у нас есть перед нашими соседями одно большое преимущество - здесь пока еще немного туристов и первозданная природа. Приезжайте и убедитесь в этом сами. А мы поможем получить яркие и незабываемые впечатления. 
+  section.section#foot-slogan.foot-slogan.lazy(data-section="foot-slogan", data-src="img/general/foot-slogan.jpg")
+    .container
+      .row
+        .col
+          h2.h2 4 000 000 туристов  
+            span ежегодно <br>едут на Алтай и 
+            | влюбляются в него <br>навсегда
+          .foot-slogan__desc Пора вливаться в этот поток
+
+
+
+
+
+//- 
